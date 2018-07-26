@@ -19,4 +19,14 @@ public class SceneController : MonoBehaviour {
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void SelectAvatar(GameObject avatar)
+    {
+        avatar.SetActive(true);
+    }
+
+    public void CancelAvatar(GameObject avatar)
+    {
+        avatar.SetActive(false);
+    }
 }
