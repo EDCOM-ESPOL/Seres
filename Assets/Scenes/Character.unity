@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 74927674}
   - component: {fileID: 74927673}
   - component: {fileID: 74927672}
+  - component: {fileID: 74927675}
   m_Layer: 5
   m_Name: avatar001 Button (2)
   m_TagString: Untagged
@@ -325,24 +326,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -383,6 +373,86 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 74927670}
+--- !u!114 &74927675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 74927670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
+--- !u!1 &94396564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 94396565}
+  - component: {fileID: 94396567}
+  - component: {fileID: 94396566}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &94396565
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94396564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1804095209}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &94396566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94396564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 677a5bf2aed85994d8b29aa7518a73bd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &94396567
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94396564}
 --- !u!1 &117626378
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +657,78 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 131960913}
+--- !u!1 &134465290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1338263922701264, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 134465291}
+  - component: {fileID: 134465293}
+  - component: {fileID: 134465292}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &134465291
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224342875409473704, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
+  m_GameObject: {fileID: 134465290}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 917076242}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 180}
+  m_SizeDelta: {x: 232, y: 232}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &134465292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114070575021335372, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
+  m_GameObject: {fileID: 134465290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &134465293
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222527324761502282, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
+  m_GameObject: {fileID: 134465290}
 --- !u!1 &150587631
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +808,7 @@ GameObject:
   - component: {fileID: 179058097}
   - component: {fileID: 179058096}
   - component: {fileID: 179058095}
+  - component: {fileID: 179058098}
   m_Layer: 5
   m_Name: avatar006 Button
   m_TagString: Untagged
@@ -731,24 +874,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -789,51 +921,124 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 179058093}
---- !u!1 &187883268
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 187883270}
-  - component: {fileID: 187883269}
-  m_Layer: 5
-  m_Name: SceneController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &187883269
+--- !u!114 &179058098
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 187883268}
+  m_GameObject: {fileID: 179058093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56fe38055a81bb94bbf4a53a2a7b1cf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &187883270
-RectTransform:
+  ConfirmPanel: {fileID: 933861571}
+--- !u!1001 &200012023
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 187883268}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.22239585, y: 0.22239585, z: 0.22239585}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.583313, y: 213.40625}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 48.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 46.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224803775887345084, guid: dfe09766f947a984cb5e74b6dd838d00,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dfe09766f947a984cb5e74b6dd838d00, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &200012024 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114294365334992072, guid: dfe09766f947a984cb5e74b6dd838d00,
+    type: 2}
+  m_PrefabInternal: {fileID: 200012023}
+  m_Script: {fileID: 11500000, guid: 56fe38055a81bb94bbf4a53a2a7b1cf3, type: 3}
 --- !u!1 &207195191
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +1048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 207195192}
   - component: {fileID: 207195193}
+  - component: {fileID: 207195194}
   m_Layer: 5
   m_Name: Avatar Container
   m_TagString: Untagged
@@ -897,7 +1103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1259.9425}
+  m_AnchoredPosition: {x: 0, y: -1260.4999}
   m_SizeDelta: {x: 1400, y: 3321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207195193
@@ -923,6 +1129,20 @@ MonoBehaviour:
   m_Spacing: {x: 30, y: 30}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &207195194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 207195191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d44dfcca30cc343b245161ce86c699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatarButtonPrefab: {fileID: 0}
+  avatarImagePrefab: {fileID: 0}
+  avatarSprites: []
 --- !u!1 &223728989
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +1154,7 @@ GameObject:
   - component: {fileID: 223728993}
   - component: {fileID: 223728992}
   - component: {fileID: 223728991}
+  - component: {fileID: 223728994}
   m_Layer: 5
   m_Name: avatar003 Button (1)
   m_TagString: Untagged
@@ -999,24 +1220,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1057,6 +1267,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 223728989}
+--- !u!114 &223728994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 223728989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &231940200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,12 +1303,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 231940200}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 562965825}
-  m_RootOrder: 0
+  m_Father: {fileID: 1804095209}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1132,7 +1354,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
@@ -1144,9 +1366,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 200012024}
+        m_MethodName: GoBack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1261,8 +1483,9 @@ CanvasRenderer:
 --- !u!1 &311344421
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 1753394780873100, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 311344422}
@@ -1279,26 +1502,28 @@ GameObject:
 --- !u!224 &311344422
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 224820308476085342, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 311344421}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 917076242}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 0}
+  m_AnchoredPosition: {x: -200, y: -150}
   m_SizeDelta: {x: 304, y: 298}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &311344423
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114587231761125886, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 311344421}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1333,7 +1558,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
@@ -1345,7 +1570,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 187883269}
+      - m_Target: {fileID: 200012024}
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -1361,8 +1586,9 @@ MonoBehaviour:
 --- !u!114 &311344424
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114547480627427454, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 311344421}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1388,8 +1614,9 @@ MonoBehaviour:
 --- !u!222 &311344425
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 222001673444143754, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 311344421}
 --- !u!1 &316808379
 GameObject:
@@ -1532,6 +1759,7 @@ GameObject:
   - component: {fileID: 343385867}
   - component: {fileID: 343385866}
   - component: {fileID: 343385865}
+  - component: {fileID: 343385868}
   m_Layer: 5
   m_Name: avatar008 Button (2)
   m_TagString: Untagged
@@ -1597,24 +1825,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1655,115 +1872,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 343385863}
---- !u!1 &374362686
-GameObject:
+--- !u!114 &343385868
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 374362688}
-  - component: {fileID: 374362687}
-  m_Layer: 5
-  m_Name: Button Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &374362687
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 374362686}
+  m_GameObject: {fileID: 343385863}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!4 &374362688
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 374362686}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.583313, y: 213.40625, z: 0}
-  m_LocalScale: {x: 0.22239585, y: 0.22239585, z: 0.22239585}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &418124078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,6 +1895,7 @@ GameObject:
   - component: {fileID: 418124082}
   - component: {fileID: 418124081}
   - component: {fileID: 418124080}
+  - component: {fileID: 418124083}
   m_Layer: 5
   m_Name: avatar002 Button (3)
   m_TagString: Untagged
@@ -1840,24 +1961,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1898,6 +2008,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 418124078}
+--- !u!114 &418124083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 418124078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &506525666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,6 +2031,7 @@ GameObject:
   - component: {fileID: 506525670}
   - component: {fileID: 506525669}
   - component: {fileID: 506525668}
+  - component: {fileID: 506525671}
   m_Layer: 5
   m_Name: avatar005 Button
   m_TagString: Untagged
@@ -1974,24 +2097,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2032,75 +2144,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 506525666}
---- !u!1 &562965824
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 562965825}
-  - component: {fileID: 562965827}
-  - component: {fileID: 562965826}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &562965825
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 562965824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 231940201}
-  m_Father: {fileID: 1804095209}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -0}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &562965826
+--- !u!114 &506525671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 562965824}
+  m_GameObject: {fileID: 506525666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 677a5bf2aed85994d8b29aa7518a73bd, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &562965827
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 562965824}
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &593068487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,7 +2305,7 @@ GameObject:
   - component: {fileID: 620008389}
   - component: {fileID: 620008386}
   m_Layer: 5
-  m_Name: Avatar Panel
+  m_Name: Avatar Scroll Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2269,7 +2324,7 @@ RectTransform:
   - {fileID: 207195192}
   - {fileID: 1956958045}
   m_Father: {fileID: 1804095209}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2716,6 +2771,7 @@ GameObject:
   - component: {fileID: 722800644}
   - component: {fileID: 722800643}
   - component: {fileID: 722800642}
+  - component: {fileID: 722800645}
   m_Layer: 5
   m_Name: avatar006 Button (2)
   m_TagString: Untagged
@@ -2781,24 +2837,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2839,6 +2884,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 722800640}
+--- !u!114 &722800645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722800640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &753709942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,6 +2907,7 @@ GameObject:
   - component: {fileID: 753709946}
   - component: {fileID: 753709945}
   - component: {fileID: 753709944}
+  - component: {fileID: 753709947}
   m_Layer: 5
   m_Name: avatar003 Button
   m_TagString: Untagged
@@ -2915,24 +2973,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2973,6 +3020,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 753709942}
+--- !u!114 &753709947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 753709942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &761971070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,6 +3043,7 @@ GameObject:
   - component: {fileID: 761971074}
   - component: {fileID: 761971073}
   - component: {fileID: 761971072}
+  - component: {fileID: 761971075}
   m_Layer: 5
   m_Name: avatar002 Button
   m_TagString: Untagged
@@ -3049,24 +3109,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3107,6 +3156,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 761971070}
+--- !u!114 &761971075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 761971070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &773854471
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,6 +3179,7 @@ GameObject:
   - component: {fileID: 773854475}
   - component: {fileID: 773854474}
   - component: {fileID: 773854473}
+  - component: {fileID: 773854476}
   m_Layer: 5
   m_Name: avatar003 Button (3)
   m_TagString: Untagged
@@ -3183,24 +3245,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3241,6 +3292,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 773854471}
+--- !u!114 &773854476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773854471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &781922258
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,6 +3451,7 @@ GameObject:
   - component: {fileID: 811388238}
   - component: {fileID: 811388237}
   - component: {fileID: 811388236}
+  - component: {fileID: 811388239}
   m_Layer: 5
   m_Name: avatar004 Button (3)
   m_TagString: Untagged
@@ -3453,24 +3517,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3511,6 +3564,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811388234}
+--- !u!114 &811388239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 811388234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &825919509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3522,6 +3587,7 @@ GameObject:
   - component: {fileID: 825919513}
   - component: {fileID: 825919512}
   - component: {fileID: 825919511}
+  - component: {fileID: 825919514}
   m_Layer: 5
   m_Name: avatar005 Button (1)
   m_TagString: Untagged
@@ -3587,24 +3653,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3645,6 +3700,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 825919509}
+--- !u!114 &825919514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825919509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &888922523
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,6 +3723,7 @@ GameObject:
   - component: {fileID: 888922527}
   - component: {fileID: 888922526}
   - component: {fileID: 888922525}
+  - component: {fileID: 888922528}
   m_Layer: 5
   m_Name: avatar001 Button
   m_TagString: Untagged
@@ -3721,24 +3789,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3779,6 +3836,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 888922523}
+--- !u!114 &888922528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888922523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &897244636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,8 +3919,9 @@ CanvasRenderer:
 --- !u!1 &917076241
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 1575759609407620, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 917076242}
@@ -3867,13 +3937,15 @@ GameObject:
 --- !u!224 &917076242
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 224974942070173374, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 917076241}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 134465291}
   - {fileID: 311344422}
   - {fileID: 1153569742}
   m_Father: {fileID: 933861572}
@@ -3887,8 +3959,9 @@ RectTransform:
 --- !u!114 &917076243
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114743689245628938, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 917076241}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -3914,14 +3987,16 @@ MonoBehaviour:
 --- !u!222 &917076244
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 222439573028983590, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 917076241}
 --- !u!1 &933861571
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 1977865774002166, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 933861572}
@@ -3937,8 +4012,9 @@ GameObject:
 --- !u!224 &933861572
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 933861571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -3946,7 +4022,7 @@ RectTransform:
   m_Children:
   - {fileID: 917076242}
   m_Father: {fileID: 1804095209}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3956,8 +4032,9 @@ RectTransform:
 --- !u!114 &933861573
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114191671055990226, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 933861571}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -3983,8 +4060,9 @@ MonoBehaviour:
 --- !u!222 &933861574
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 222856336547068178, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 933861571}
 --- !u!1 &1009178093
 GameObject:
@@ -4201,6 +4279,7 @@ GameObject:
   - component: {fileID: 1069928906}
   - component: {fileID: 1069928905}
   - component: {fileID: 1069928904}
+  - component: {fileID: 1069928907}
   m_Layer: 5
   m_Name: avatar006 Button (1)
   m_TagString: Untagged
@@ -4266,24 +4345,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4324,6 +4392,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1069928902}
+--- !u!114 &1069928907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069928902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1112645120
 GameObject:
   m_ObjectHideFlags: 0
@@ -4403,6 +4483,7 @@ GameObject:
   - component: {fileID: 1122537456}
   - component: {fileID: 1122537455}
   - component: {fileID: 1122537454}
+  - component: {fileID: 1122537457}
   m_Layer: 5
   m_Name: avatar004 Button
   m_TagString: Untagged
@@ -4468,24 +4549,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4526,6 +4596,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1122537452}
+--- !u!114 &1122537457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1122537452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1130348582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4605,6 +4687,7 @@ GameObject:
   - component: {fileID: 1150263277}
   - component: {fileID: 1150263276}
   - component: {fileID: 1150263275}
+  - component: {fileID: 1150263278}
   m_Layer: 5
   m_Name: avatar005 Button (2)
   m_TagString: Untagged
@@ -4670,24 +4753,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4728,11 +4800,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1150263273}
---- !u!1 &1153569741
-GameObject:
+--- !u!114 &1150263278
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1150263273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
+--- !u!1 &1153569741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1792588930965734, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1153569742}
@@ -4749,26 +4834,28 @@ GameObject:
 --- !u!224 &1153569742
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 224446618608176454, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 1153569741}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 917076242}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
+  m_AnchoredPosition: {x: 200, y: -150}
   m_SizeDelta: {x: 304, y: 298}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153569743
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114232745211597580, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 1153569741}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -4803,7 +4890,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
@@ -4815,7 +4902,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 187883269}
+      - m_Target: {fileID: 200012024}
         m_MethodName: CancelAvatar
         m_Mode: 2
         m_Arguments:
@@ -4831,8 +4918,9 @@ MonoBehaviour:
 --- !u!114 &1153569744
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114212590666339170, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 1153569741}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -4858,9 +4946,134 @@ MonoBehaviour:
 --- !u!222 &1153569745
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 222966204372398980, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1170387912}
   m_GameObject: {fileID: 1153569741}
+--- !u!1001 &1170387912
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1804095209}
+    m_Modifications:
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224975990513649054, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114587231761125886, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1934134852}
+    - target: {fileID: 114587231761125886, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 200012024}
+    - target: {fileID: 114232745211597580, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1934134852}
+    - target: {fileID: 114232745211597580, guid: 5fabaf829f2ced94ba5d8fd0fbf51824,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 200012024}
+    - target: {fileID: 1977865774002166, guid: 5fabaf829f2ced94ba5d8fd0fbf51824, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5fabaf829f2ced94ba5d8fd0fbf51824, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1175224750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4940,6 +5153,7 @@ GameObject:
   - component: {fileID: 1179492733}
   - component: {fileID: 1179492732}
   - component: {fileID: 1179492731}
+  - component: {fileID: 1179492734}
   m_Layer: 5
   m_Name: avatar001 Button (3)
   m_TagString: Untagged
@@ -5005,24 +5219,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5063,6 +5266,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1179492729}
+--- !u!114 &1179492734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1179492729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1198456501
 GameObject:
   m_ObjectHideFlags: 0
@@ -5074,6 +5289,7 @@ GameObject:
   - component: {fileID: 1198456505}
   - component: {fileID: 1198456504}
   - component: {fileID: 1198456503}
+  - component: {fileID: 1198456506}
   m_Layer: 5
   m_Name: avatar007 Button
   m_TagString: Untagged
@@ -5139,24 +5355,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5197,6 +5402,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1198456501}
+--- !u!114 &1198456506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1198456501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1304098132
 GameObject:
   m_ObjectHideFlags: 0
@@ -5208,6 +5425,7 @@ GameObject:
   - component: {fileID: 1304098136}
   - component: {fileID: 1304098135}
   - component: {fileID: 1304098134}
+  - component: {fileID: 1304098137}
   m_Layer: 5
   m_Name: avatar002 Button (2)
   m_TagString: Untagged
@@ -5273,24 +5491,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5331,6 +5538,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304098132}
+--- !u!114 &1304098137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1304098132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1319926161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5410,6 +5629,7 @@ GameObject:
   - component: {fileID: 1340096550}
   - component: {fileID: 1340096549}
   - component: {fileID: 1340096548}
+  - component: {fileID: 1340096551}
   m_Layer: 5
   m_Name: avatar008 Button (3)
   m_TagString: Untagged
@@ -5475,24 +5695,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5533,6 +5742,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1340096546}
+--- !u!114 &1340096551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1340096546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1367134015
 GameObject:
   m_ObjectHideFlags: 0
@@ -5612,6 +5833,7 @@ GameObject:
   - component: {fileID: 1388701427}
   - component: {fileID: 1388701426}
   - component: {fileID: 1388701425}
+  - component: {fileID: 1388701428}
   m_Layer: 5
   m_Name: avatar004 Button (2)
   m_TagString: Untagged
@@ -5677,24 +5899,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5735,6 +5946,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1388701423}
+--- !u!114 &1388701428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1388701423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1460180515
 GameObject:
   m_ObjectHideFlags: 0
@@ -5746,6 +5969,7 @@ GameObject:
   - component: {fileID: 1460180519}
   - component: {fileID: 1460180518}
   - component: {fileID: 1460180517}
+  - component: {fileID: 1460180520}
   m_Layer: 5
   m_Name: avatar003 Button (2)
   m_TagString: Untagged
@@ -5811,24 +6035,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5869,6 +6082,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1460180515}
+--- !u!114 &1460180520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460180515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1476360336
 GameObject:
   m_ObjectHideFlags: 0
@@ -6152,6 +6377,7 @@ GameObject:
   - component: {fileID: 1605879771}
   - component: {fileID: 1605879770}
   - component: {fileID: 1605879769}
+  - component: {fileID: 1605879772}
   m_Layer: 5
   m_Name: avatar005 Button (3)
   m_TagString: Untagged
@@ -6217,24 +6443,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6275,6 +6490,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1605879767}
+--- !u!114 &1605879772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1605879767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1632037152
 GameObject:
   m_ObjectHideFlags: 0
@@ -6490,6 +6717,7 @@ GameObject:
   - component: {fileID: 1699760915}
   - component: {fileID: 1699760914}
   - component: {fileID: 1699760913}
+  - component: {fileID: 1699760916}
   m_Layer: 5
   m_Name: avatar008 Button (1)
   m_TagString: Untagged
@@ -6555,24 +6783,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6613,6 +6830,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699760911}
+--- !u!114 &1699760916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1699760911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1765583194
 GameObject:
   m_ObjectHideFlags: 0
@@ -6624,6 +6853,7 @@ GameObject:
   - component: {fileID: 1765583198}
   - component: {fileID: 1765583197}
   - component: {fileID: 1765583196}
+  - component: {fileID: 1765583199}
   m_Layer: 5
   m_Name: avatar007 Button (3)
   m_TagString: Untagged
@@ -6689,24 +6919,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6747,6 +6966,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765583194}
+--- !u!114 &1765583199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1765583194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1766300327
 GameObject:
   m_ObjectHideFlags: 0
@@ -6758,6 +6989,7 @@ GameObject:
   - component: {fileID: 1766300331}
   - component: {fileID: 1766300330}
   - component: {fileID: 1766300329}
+  - component: {fileID: 1766300332}
   m_Layer: 5
   m_Name: avatar007 Button (2)
   m_TagString: Untagged
@@ -6823,24 +7055,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6881,6 +7102,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1766300327}
+--- !u!114 &1766300332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1766300327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1804095205
 GameObject:
   m_ObjectHideFlags: 0
@@ -6966,7 +7199,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 562965825}
+  - {fileID: 94396565}
+  - {fileID: 231940201}
   - {fileID: 620008385}
   - {fileID: 933861572}
   m_Father: {fileID: 0}
@@ -6988,6 +7222,7 @@ GameObject:
   - component: {fileID: 1812941686}
   - component: {fileID: 1812941685}
   - component: {fileID: 1812941684}
+  - component: {fileID: 1812941687}
   m_Layer: 5
   m_Name: avatar004 Button (1)
   m_TagString: Untagged
@@ -7053,24 +7288,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7111,6 +7335,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1812941682}
+--- !u!114 &1812941687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812941682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1843823557
 GameObject:
   m_ObjectHideFlags: 0
@@ -7122,6 +7358,7 @@ GameObject:
   - component: {fileID: 1843823561}
   - component: {fileID: 1843823560}
   - component: {fileID: 1843823559}
+  - component: {fileID: 1843823562}
   m_Layer: 5
   m_Name: avatar001 Button (1)
   m_TagString: Untagged
@@ -7187,24 +7424,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7245,6 +7471,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1843823557}
+--- !u!114 &1843823562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1843823557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1909803974
 GameObject:
   m_ObjectHideFlags: 0
@@ -7256,6 +7494,7 @@ GameObject:
   - component: {fileID: 1909803978}
   - component: {fileID: 1909803977}
   - component: {fileID: 1909803976}
+  - component: {fileID: 1909803979}
   m_Layer: 5
   m_Name: avatar008 Button
   m_TagString: Untagged
@@ -7321,24 +7560,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7379,6 +7607,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1909803974}
+--- !u!114 &1909803979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909803974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1925837866
 GameObject:
   m_ObjectHideFlags: 0
@@ -7390,6 +7630,7 @@ GameObject:
   - component: {fileID: 1925837870}
   - component: {fileID: 1925837869}
   - component: {fileID: 1925837868}
+  - component: {fileID: 1925837871}
   m_Layer: 5
   m_Name: avatar006 Button (3)
   m_TagString: Untagged
@@ -7455,24 +7696,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7513,6 +7743,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1925837866}
+--- !u!114 &1925837871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925837866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &1929370838
 GameObject:
   m_ObjectHideFlags: 0
@@ -7524,6 +7766,7 @@ GameObject:
   - component: {fileID: 1929370842}
   - component: {fileID: 1929370841}
   - component: {fileID: 1929370840}
+  - component: {fileID: 1929370843}
   m_Layer: 5
   m_Name: avatar002 Button (1)
   m_TagString: Untagged
@@ -7589,24 +7832,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7647,6 +7879,65 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1929370838}
+--- !u!114 &1929370843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1929370838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
+--- !u!1001 &1934134851
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4892248614636774, guid: 2c766c362e3629743a7d813cc1ea26b2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 196.11235
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892248614636774, guid: 2c766c362e3629743a7d813cc1ea26b2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 89.94709
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892248614636774, guid: 2c766c362e3629743a7d813cc1ea26b2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.1474485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892248614636774, guid: 2c766c362e3629743a7d813cc1ea26b2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892248614636774, guid: 2c766c362e3629743a7d813cc1ea26b2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892248614636774, guid: 2c766c362e3629743a7d813cc1ea26b2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892248614636774, guid: 2c766c362e3629743a7d813cc1ea26b2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892248614636774, guid: 2c766c362e3629743a7d813cc1ea26b2, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2c766c362e3629743a7d813cc1ea26b2, type: 2}
+  m_IsPrefabParent: 0
+--- !u!82 &1934134852 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82354857185531398, guid: 2c766c362e3629743a7d813cc1ea26b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1934134851}
 --- !u!1 &1956958044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7722,8 +8013,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1130348584}
   m_HandleRect: {fileID: 1130348583}
   m_Direction: 2
-  m_Value: 0.9997789
-  m_Size: 0.24089132
+  m_Value: 0.9999999
+  m_Size: 0.24089128
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7808,6 +8099,7 @@ GameObject:
   - component: {fileID: 2055806693}
   - component: {fileID: 2055806692}
   - component: {fileID: 2055806691}
+  - component: {fileID: 2055806694}
   m_Layer: 5
   m_Name: avatar007 Button (1)
   m_TagString: Untagged
@@ -7873,24 +8165,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 374362687}
+      - m_Target: {fileID: 1934134852}
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8300000, guid: c8a6230a112723f4faf0d6482aea3436,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 187883269}
-        m_MethodName: SelectAvatar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 933861571}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7931,6 +8212,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2055806689}
+--- !u!114 &2055806694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2055806689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfirmPanel: {fileID: 933861571}
 --- !u!1 &2068548860
 GameObject:
   m_ObjectHideFlags: 0

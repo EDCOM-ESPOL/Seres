@@ -9,8 +9,8 @@ public class CloudController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log(transform.position.x);
-        Debug.Log(transform.localPosition.x);
+        //Debug.Log(transform.position.x);
+        //Debug.Log(transform.localPosition.x);
     }
 	
 	// Update is called once per frame

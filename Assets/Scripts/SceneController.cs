@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    //public static SceneController Instance;
+
+    private int sceneIndex;
+
+    // Use this for initialization
+    void Start () {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(sceneIndex);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GoBack();
+        }
+            
 	}
 
     public void LoadScene(string sceneName)
@@ -20,13 +30,21 @@ public class SceneController : MonoBehaviour {
         SceneManager.LoadScene(sceneName);
     }
 
-    public void SelectAvatar(GameObject avatar)
+    public void GoBack()
     {
-        avatar.SetActive(true);
+        if (sceneIndex < 1)
+        {
+            Application.Quit();
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneIndex - 1);
+        }
     }
 
     public void CancelAvatar(GameObject avatar)
     {
         avatar.SetActive(false);
     }
+
 }
