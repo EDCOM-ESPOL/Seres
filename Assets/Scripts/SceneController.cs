@@ -13,7 +13,7 @@ public class SceneController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log(sceneIndex);
+        //Debug.Log(sceneIndex);
 	}
 	
 	// Update is called once per frame
