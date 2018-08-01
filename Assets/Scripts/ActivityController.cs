@@ -11,19 +11,21 @@ public class ActivityController : MonoBehaviour {
     public Text scoreText;
 
     private string[] order = {"Ser No Vivo", "Ser Vivo" }; //0 = no vivo ... 1 = vivo
-    private int score = 0;
-    
+    private int score;
 
+    private int index;
 
     // Use this for initialization
     void Start () {
-        scoreText.text = score.ToString();
-        int index = Random.Range(0, 2);
+        index = Random.Range(0, 2);
+        score = 0;
+
         orderText.text = order[index];
 
-        gameObject.GetComponent<SpawnActivityOption>().CreateNonLiving();
+        gameObject.GetComponent<SpawnActivityOption>().CreateBeing(false);
+        gameObject.GetComponent<SpawnActivityOption>().CreateBeing(true);
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -31,10 +33,19 @@ public class ActivityController : MonoBehaviour {
         
     }
 
-    public void EvaluateOnClick(Button buttonClicked)
+    public int GetScore()
     {
-        buttonClicked.GetComponent<Image>().sprite = right;
-        score++;
-        scoreText.text = score.ToString();
+        return score;
     }
+
+    public void SetScore(int score)
+    {
+        this.score = score;
+    }
+
+    public int GetOrder()
+    {
+        return index;
+    }
+
 }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpawnActivityOption : MonoBehaviour {
+public class SpawnActivityOption : MonoBehaviour
+{
 
     public GameObject activityOptionPrefab;
     public Sprite[] nonLivingSprites;
@@ -11,27 +12,28 @@ public class SpawnActivityOption : MonoBehaviour {
 
     void Start()
     {
-        
+
     }
 
-    public void CreateNonLiving()
+    public void CreateBeing(bool isAlive)
     {
-        Sprite nonLivingSprite = nonLivingSprites[Random.Range(0, nonLivingSprites.Length)];
-        
+        Sprite beingSprite;
+        if (isAlive)
+        {
+            beingSprite = livingSprites[Random.Range(0, livingSprites.Length)];
+        }
+        else
+        {
+            beingSprite = nonLivingSprites[Random.Range(0, nonLivingSprites.Length)];
+        }
 
-        GameObject newActivityOption = Instantiate (activityOptionPrefab);
-        newActivityOption.name = nonLivingSprite.name;
-        newActivityOption.GetComponent<ActivityOption>().isAlive = false;
-        newActivityOption.GetComponent<Image>().sprite = nonLivingSprite;
+        GameObject newActivityOption = Instantiate(activityOptionPrefab);
+        newActivityOption.name = beingSprite.name;
+        newActivityOption.GetComponent<ActivityOption>().isAlive = isAlive;
+        newActivityOption.GetComponent<Image>().sprite = beingSprite;
         newActivityOption.transform.SetParent(GameObject.Find("OptionPanel").transform);
         newActivityOption.transform.localScale = new Vector3(1f, 1f, 1f);
 
-
     }
 
-    public void CreateLiving()
-    {
-        Sprite livingSprite = livingSprites[Random.Range(0, livingSprites.Length)];
-        //bool isAlive = true;
-    }
 }
