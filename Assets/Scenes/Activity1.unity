@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f42e2b5b3b6ada4abc2d71976ade453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  right: {fileID: 21300000, guid: b482f10ac92bee84e9db44a52f87125b, type: 3}
-  wrong: {fileID: 21300000, guid: 7d8eec9d39b2f3640a8998823a76c95e, type: 3}
+  right: {fileID: 21300000, guid: 4fb061bea9cf7784d8f343dbeefc4f08, type: 3}
+  wrong: {fileID: 21300000, guid: c3966d7924a742c49af061fd821399da, type: 3}
   orderText: {fileID: 1487626737}
   scoreText: {fileID: 1589871164}
 --- !u!224 &31933746
@@ -266,6 +266,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f3ea9e25395e7a145a049d5be8e0982e, type: 3}
   livingSprites:
   - {fileID: 21300000, guid: c76ea7c254822e3479756d71e22459de, type: 3}
+  - {fileID: 21300000, guid: 4b897108a7233b24f82c26d4a7fe08bc, type: 3}
 --- !u!1001 &147527239
 Prefab:
   m_ObjectHideFlags: 0
@@ -647,6 +648,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114809890347849432, guid: 174f50cb32364e54e924b2d5e67f9dc5,
+        type: 2}
+      propertyPath: livingSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224447958704626880, guid: 174f50cb32364e54e924b2d5e67f9dc5,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -747,6 +753,18 @@ Prefab:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1589871164}
+    - target: {fileID: 114477330649659918, guid: 174f50cb32364e54e924b2d5e67f9dc5,
+        type: 2}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fb061bea9cf7784d8f343dbeefc4f08,
+        type: 3}
+    - target: {fileID: 114477330649659918, guid: 174f50cb32364e54e924b2d5e67f9dc5,
+        type: 2}
+      propertyPath: wrong
+      value: 
+      objectReference: {fileID: 21300000, guid: c3966d7924a742c49af061fd821399da,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 174f50cb32364e54e924b2d5e67f9dc5, type: 2}
   m_IsPrefabParent: 0
@@ -1229,7 +1247,7 @@ Prefab:
     - target: {fileID: 224925663101699910, guid: ec50f91ae51789743b19b3b668201d9f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 313.5
+      value: 539
       objectReference: {fileID: 0}
     - target: {fileID: 224925663101699910, guid: ec50f91ae51789743b19b3b668201d9f,
         type: 2}

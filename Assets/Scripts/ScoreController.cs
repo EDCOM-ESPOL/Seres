@@ -36,7 +36,11 @@ public class ScoreController : MonoBehaviour {
             //scoreText.text = score.ToString();
             GameObject.Find("SceneController").GetComponent<SceneController>().LoadScene("ActivityHub");
         }
-        //buttonClicked.GetComponent<Image>().sprite = right;
+        else
+        {
+            //buttonClicked.GetComponent<Image>().sprite = right;
+        }
+
 
     }
 
