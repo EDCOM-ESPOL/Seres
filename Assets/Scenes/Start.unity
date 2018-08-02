@@ -359,6 +359,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1822938116233680, guid: dfe09766f947a984cb5e74b6dd838d00, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfe09766f947a984cb5e74b6dd838d00, type: 2}
   m_IsPrefabParent: 0
@@ -517,7 +521,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2054277749}
+      - m_Target: {fileID: 1085746440}
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -908,6 +912,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1085746440 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114294365334992072, guid: dfe09766f947a984cb5e74b6dd838d00,
+    type: 2}
+  m_PrefabInternal: {fileID: 61604053}
+  m_Script: {fileID: 11500000, guid: 56fe38055a81bb94bbf4a53a2a7b1cf3, type: 3}
 --- !u!1 &1103868748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,12 +1210,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1393802252}
---- !u!114 &2054277749 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114294365334992072, guid: dfe09766f947a984cb5e74b6dd838d00,
-    type: 2}
-  m_PrefabInternal: {fileID: 61604053}
-  m_Script: {fileID: 11500000, guid: 56fe38055a81bb94bbf4a53a2a7b1cf3, type: 3}
 --- !u!1 &2082517707
 GameObject:
   m_ObjectHideFlags: 0
