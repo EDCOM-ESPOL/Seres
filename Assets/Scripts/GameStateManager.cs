@@ -27,13 +27,20 @@ public class GameStateManager : UnitySingletonPersistent<GameStateManager> {
 
     public void GoBack()
     {
-        if (sceneIndex < 1)
+        int index = getCurrentSceneIndex();
+        if (index < 1)
         {
             Application.Quit();
         }
         else
         {
-            SceneManager.LoadScene(sceneIndex - 1);
+            SceneManager.LoadScene(index - 1);
         }
     }
+
+    public int getCurrentSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
 }

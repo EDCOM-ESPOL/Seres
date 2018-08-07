@@ -11,14 +11,14 @@ public class ActivityController : MonoBehaviour {
     public Text scoreText;
 
     private string[] order = {"Ser No Vivo", "Ser Vivo" }; //0 = no vivo ... 1 = vivo
-    private int score;
+    //private int score;
 
     private int index;
 
     // Use this for initialization
     void Start () {
         index = Random.Range(0, 2);
-        score = 0;
+        //score = 0;
 
         orderText.text = order[index];
 
@@ -29,18 +29,18 @@ public class ActivityController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        scoreText.text = score.ToString();
+        
         
     }
 
-    public int GetScore()
-    {
-        return score;
-    }
+    //public int GetScore()
+    //{
+    //    return score;
+    //}
 
-    public void SetScore(int score)
+    public void SetScoreInScreen(int score)
     {
-        this.score = score;
+        scoreText.text = score.ToString();
     }
 
     public int GetOrder()

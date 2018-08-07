@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SessionManager : UnitySingletonPersistent<SessionManager> {
 
-    string playerId;
-    Sprite playerAvatar;
+    private string playerId;
+    private Sprite playerAvatar;
     private int[] playerScore = { 1,0,0,0,0};
 
     // Use this for initialization
@@ -19,14 +20,31 @@ public class SessionManager : UnitySingletonPersistent<SessionManager> {
 		
 	}
 
+
+    public string getPlayerID()
+    {
+        return this.playerId;
+    }
+
     public void setPlayerID()
     {
         this.playerId = Random.Range(0, 100).ToString();
     }
 
-    public void setPlayerAvatar(Sprite sprite)
+
+    public Sprite getPlayerAvatar()
     {
-        this.playerAvatar = sprite;
+        return this.playerAvatar;
+    }
+
+    public void setPlayerAvatar(Sprite avatarSprite)
+    {
+        this.playerAvatar = avatarSprite;
+    }
+
+    public string getPlayerAvatarName()
+    {
+        return this.playerAvatar.name;
     }
 
     public int[] getPlayerScore()

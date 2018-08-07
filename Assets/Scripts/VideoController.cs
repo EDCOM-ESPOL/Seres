@@ -11,6 +11,9 @@ public class VideoController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Debug.Log("Player ID: " + SessionManager.Instance.getPlayerID());
+        Debug.Log("Player Avatar : " + SessionManager.Instance.getPlayerAvatarName());
+        
         //backButton = GameObject.Find("BackButton");
         //activityButton = GameObject.Find("GoToActivityButton");
         toggler = GameObject.Find("Control Panel");
