@@ -34,6 +34,7 @@ public class ScoreController : MonoBehaviour {
             GameObject.Find("ActivityController").GetComponent<ActivityController>().SetScore(score);
             Debug.Log(score);
             //scoreText.text = score.ToString();
+            SessionManager.Instance.setPlayerScore( new int[] { 1,1,0,0,0});
             GameObject.Find("SceneController").GetComponent<SceneController>().LoadScene("ActivityHub");
         }
         else
