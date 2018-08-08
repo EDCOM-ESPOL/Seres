@@ -7,7 +7,9 @@ public class SessionManager : UnitySingletonPersistent<SessionManager> {
 
     private string playerId;
     private Sprite playerAvatar;
-    private int[] playerScore = { 1,0,0,0,0};
+    private int[] playerScore = { 0,0,0,0};
+    private bool[] levels = { true, false, false, false, false };
+
 
     // Use this for initialization
     void Start () {
@@ -55,5 +57,15 @@ public class SessionManager : UnitySingletonPersistent<SessionManager> {
     public void setPlayerScore(int[] score)
     {
         this.playerScore = score;
+    }
+
+    public bool[] getLevels()
+    {
+        return this.levels;
+    }
+
+    public void setLevels(bool[] levels)
+    {
+        this.levels = levels;
     }
 }

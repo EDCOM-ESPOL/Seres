@@ -1207,15 +1207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b15f573a5c020846958dc99641c4005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 888922523}
-  - {fileID: 761971070}
-  - {fileID: 753709942}
-  - {fileID: 1122537452}
-  - {fileID: 506525666}
-  - {fileID: 179058093}
-  - {fileID: 1198456501}
-  - {fileID: 1909803974}
   ConfirmPanelBack: {fileID: 933861571}
 --- !u!4 &602984936
 Transform:

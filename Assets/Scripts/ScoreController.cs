@@ -38,23 +38,33 @@ public class ScoreController : MonoBehaviour {
 
             //Debug.Log(SceneManager.GetActiveScene().name);
 
-            int[] aux = SessionManager.Instance.getPlayerScore();
+            int[] scores = SessionManager.Instance.getPlayerScore();
+            bool[] levels = SessionManager.Instance.getLevels();
 
             switch (SceneManager.GetActiveScene().name)
             {
                 case "Activity1":
-                    Debug.Log("QUEPAJO");
-                    aux[0] = aux[0] + 1;
-                    if (aux[1] == 0)
+                    scores[0] = scores[0] + 1;
+                    if (levels[1] == false)
                     {
-                        aux[1] = 1;
+                        levels[1] = true;
+                        Debug.Log("Nivel 2 Activado");
+                    }
+                    break;
+                case "Activity2":
+                    scores[1] = scores[1] + 1;
+                    if (levels[2] == false)
+                    {
+                        levels[2] = true;
+                        Debug.Log("Nivel 3 Activado");
                     }
                     break;
                 default:
                     break;
             }
 
-            SessionManager.Instance.setPlayerScore(aux);
+            SessionManager.Instance.setPlayerScore(scores);
+            SessionManager.Instance.setLevels(levels);
             GameStateManager.Instance.LoadScene("ActivityHub");
 
             //GameObject.Find("SceneController").GetComponent<SceneController>().LoadScene("ActivityHub");

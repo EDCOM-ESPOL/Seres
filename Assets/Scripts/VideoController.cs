@@ -6,19 +6,24 @@ public class VideoController : MonoBehaviour {
     //private Button backButton;
     //private GameObject backButton;
     //private GameObject activityButton;
-    private GameObject toggler;
-    public VideoPlayer player; 
+    
+    //private GameObject toggler;
+    public VideoPlayer player;
+    public GameObject panel;
 
     // Use this for initialization
     void Start () {
-        Debug.Log("Player ID: " + SessionManager.Instance.getPlayerID());
-        Debug.Log("Player Avatar : " + SessionManager.Instance.getPlayerAvatarName());
-        
+        //Debug.Log("Player ID: " + SessionManager.Instance.getPlayerID());
+        //Debug.Log("Player Avatar : " + SessionManager.Instance.getPlayerAvatarName());
+
         //backButton = GameObject.Find("BackButton");
         //activityButton = GameObject.Find("GoToActivityButton");
-        toggler = GameObject.Find("Control Panel");
+
+
+        //panel = GameObject.Find("Control Panel");
+
         //Debug.Log(toggler.activeSelf);
-        toggler.SetActive(false);
+        panel.SetActive(false);
         //Debug.Log(toggler.activeSelf);
     }
 
@@ -27,16 +32,22 @@ public class VideoController : MonoBehaviour {
     {
         if (Input.GetMouseButtonUp(0))
         {
-            if (toggler.activeSelf == false)
+            if (panel.activeSelf == false)
             {
-                toggler.SetActive(true);
+                panel.SetActive(true);
             }
             else
             {
-                toggler.SetActive(false);
+                panel.SetActive(false);
             }
 
             //Debug.Log(toggler.activeSelf);
+        }
+
+        Debug.Log(player.time);
+
+        if (player.time >= 5f) {
+            ShowOptions();
         }
     }
 
@@ -53,5 +64,9 @@ public class VideoController : MonoBehaviour {
         player.Pause();
     }
 
+    public void ShowOptions()
+    {
+        panel.SetActive(true);
+    }
 
 }

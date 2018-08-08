@@ -14,10 +14,10 @@ public class GameStateManager : UnitySingletonPersistent<GameStateManager> {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            GoBack();
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    GoBack();
+        //}
     }
 
     public void LoadScene(string sceneName)
