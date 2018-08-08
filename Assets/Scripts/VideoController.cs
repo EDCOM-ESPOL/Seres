@@ -64,6 +64,11 @@ public class VideoController : MonoBehaviour {
         player.Pause();
     }
 
+    public void StopAndGoToScene(string scene)
+    {
+        GameStateManager.Instance.LoadScene(scene);
+    }
+
     public void ShowOptions()
     {
         panel.SetActive(true);
