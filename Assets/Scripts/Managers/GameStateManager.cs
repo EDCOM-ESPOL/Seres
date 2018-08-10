@@ -41,4 +41,8 @@ public class GameStateManager : UnitySingleton<GameStateManager> {
         return SceneManager.GetActiveScene().buildIndex;
     }
 
+    public string getCurrentSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
 }

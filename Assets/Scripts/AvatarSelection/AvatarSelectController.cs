@@ -13,7 +13,7 @@ public class AvatarSelectController : UnitySingleton<AvatarSelectController> {
 
     // Use this for initialization
     void Start () {
-        
+        AudioManager.Instance.PlaySound("LoliEscogeAvatar");
     }
 
     // Update is called once per frame

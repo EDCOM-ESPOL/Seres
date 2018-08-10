@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DigitalRuby.SoundManagerNamespace;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ActivityHubManager : MonoBehaviour {
@@ -8,6 +9,7 @@ public class ActivityHubManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        //AudioManager.Instance.PlaySound("LoliEscogeNivel");
         activityButtons = GameObject.Find("ActivityButtonContainer").GetComponentsInChildren<Button>();
         updateInterface(SessionManager.Instance.getLevels());
         

@@ -13,7 +13,7 @@ namespace DigitalRuby.SoundManagerNamespace
         void Start()
         {
 
-            foreach (Transform child in GameObject.Find("SFXSources").gameObject.transform)
+            foreach (Transform child in GameObject.Find("SoundSources").gameObject.transform)
             {
                 Debug.Log(child.GetComponent<AudioSource>());
                 SoundAudioSources.Add(child.GetComponent<AudioSource>());
@@ -33,8 +33,8 @@ namespace DigitalRuby.SoundManagerNamespace
             {
                 if (source.name == Clip)
                 {
-                    source.Play();
-                        //PlayOneShotSoundManaged(source.clip);
+                    //source.Play();
+                    source.PlayOneShotSoundManaged(source.clip);
                 }
             }
 
