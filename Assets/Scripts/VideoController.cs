@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DigitalRuby.SoundManagerNamespace;
+using UnityEngine;
 using UnityEngine.Video;
 
 public class VideoController : MonoBehaviour {
@@ -44,15 +45,16 @@ public class VideoController : MonoBehaviour {
             //Debug.Log(toggler.activeSelf);
         }
 
-        Debug.Log(player.time);
+        //Debug.Log(player.time);
 
-        if (player.time >= 5f) {
-            ShowOptions();
-        }
+        //if (player.time >= 5f) {
+        //    ShowOptions();
+        //}
     }
 
     public void Replay()
     {
+        AudioManager.Instance.PlaySound("TinyButtonPush");
         player.time = 0;
         player.Play();
 
