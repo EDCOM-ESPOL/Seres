@@ -35,4 +35,23 @@ public class ActivityHubManager : MonoBehaviour {
 
         }
     }
+
+    public void showExit(GameObject confirmPanelBack)
+    {
+        AudioManager.Instance.PlaySound("TinyButtonPush");
+        confirmPanelBack.SetActive(true);
+    }
+
+
+    public void cancelExit(GameObject confirmPanelBack)
+    {
+        AudioManager.Instance.PlaySound("TinyButtonPush");
+        confirmPanelBack.SetActive(false);
+    }
+
+    public void exitApp()
+    {
+        AudioManager.Instance.PlaySound("TinyButtonPush");
+        Application.Quit();
+    }
 }

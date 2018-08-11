@@ -26,3 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Activity1.unity
     guid: b1781f6adbdc639458c0d953d83bb630
+  - enabled: 1
+    path: Assets/Scenes/Activity2.unity
+    guid: 66e1b98aa40680644ab278aad7b436e1
+  - enabled: 1
+    path: Assets/Scenes/Activity3.unity
+    guid: 60a275bdfe1633c46ba205e752a565b5
+  - enabled: 1
+    path: Assets/Scenes/Activity4.unity
+    guid: 033967f96d6e9814d98f6614258642dc

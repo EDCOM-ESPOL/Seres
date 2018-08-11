@@ -33,8 +33,8 @@ namespace DigitalRuby.SoundManagerNamespace
             {
                 if (source.name == Clip)
                 {
-                    //source.Play();
-                    source.PlayOneShotSoundManaged(source.clip);
+                    source.Play();
+                    //source.PlayOneShotSoundManaged(source.clip);
                 }
             }
 
