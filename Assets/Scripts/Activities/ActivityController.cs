@@ -8,7 +8,7 @@ public class ActivityController : MonoBehaviour {
 
     //public Sprite right;
     //public Sprite wrong;
-    public Text orderText;
+    //public Text orderText;
     //public Text scoreText;
     public GameObject activityOptionPrefab;
     public Sprite[] nonLivingSprites;
@@ -32,7 +32,7 @@ public class ActivityController : MonoBehaviour {
         if (index == 0)
         {
             order = false;
-            orderText.text = "Ser No Vivo";
+            //orderText.text = "Ser No Vivo";
 
             switch (GameStateManager.Instance.getCurrentSceneName())
             {
@@ -55,7 +55,7 @@ public class ActivityController : MonoBehaviour {
         else
         {
             order = true;
-            orderText.text = "Ser Vivo";
+            //orderText.text = "Ser Vivo";
 
             switch (GameStateManager.Instance.getCurrentSceneName())
             {
