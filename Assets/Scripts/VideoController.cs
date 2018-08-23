@@ -1,5 +1,6 @@
 ﻿using DigitalRuby.SoundManagerNamespace;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class VideoController : MonoBehaviour {
@@ -11,6 +12,10 @@ public class VideoController : MonoBehaviour {
     //private GameObject toggler;
     public VideoPlayer player;
     public GameObject panel;
+    public GameObject pauseButton;
+    public GameObject playButton;
+    
+    
 
     // Use this for initialization
     void Start () {
@@ -31,18 +36,27 @@ public class VideoController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (player.isPlaying)
         {
-            if (panel.activeSelf == false)
+            if (Input.GetMouseButtonUp(0))
             {
-                panel.SetActive(true);
-            }
-            else
-            {
-                panel.SetActive(false);
-            }
+                if (panel.activeSelf == false)
+                {
+                    panel.SetActive(true);
+                }
+                else
+                {
+                    panel.SetActive(false);
+                }
 
-            //Debug.Log(toggler.activeSelf);
+                //Debug.Log(toggler.activeSelf);
+            }
+        }
+        else
+        {
+            panel.SetActive(true);
+            //pauseButton.SetActive(false);
+            //playButton.SetActive(false);
         }
 
         //Debug.Log(player.time);
@@ -74,6 +88,22 @@ public class VideoController : MonoBehaviour {
     public void ShowOptions()
     {
         panel.SetActive(true);
+    }
+
+    public void Pause()
+    {
+        AudioManager.Instance.PlaySound("TinyButtonPush");
+        player.Pause();
+        pauseButton.SetActive(false);
+        playButton.SetActive(true);
+    }
+
+    public void UnPause()
+    {
+        AudioManager.Instance.PlaySound("TinyButtonPush");
+        player.Play();
+        pauseButton.SetActive(true);
+        playButton.SetActive(false);
     }
 
 }
