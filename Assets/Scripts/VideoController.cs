@@ -69,15 +69,17 @@ public class VideoController : MonoBehaviour {
     public void Replay()
     {
         AudioManager.Instance.PlaySound("TinyButtonPush");
-        player.time = 0;
+        player.time = 0.0f;
+        Debug.Log("LOLA");
+        player.Stop();
+
         player.Play();
 
     }
 
     public void Stop()
     {
-        player.time = 0;
-        player.Pause();
+        player.Stop();
     }
 
     public void StopAndGoToScene(string scene)
@@ -105,5 +107,7 @@ public class VideoController : MonoBehaviour {
         pauseButton.SetActive(true);
         playButton.SetActive(false);
     }
+
+
 
 }
