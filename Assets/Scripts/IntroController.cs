@@ -7,14 +7,14 @@ public class IntroController : VideoController {
 
     //public VideoPlayer player;
     //public GameObject panel;
-    float videoLenght;
+    //float videoLenght;
 
     // Use this for initialization
     void Start () {
         //panel.SetActive(false);
 
         Debug.Log(base.player.clip.length);
-        videoLenght = (player.frameCount / player.frameRate);
+        //videoLenght = (player.frameCount / player.frameRate);
         //player.time = 30.0f;
     }
 	
