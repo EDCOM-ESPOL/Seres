@@ -8,6 +8,7 @@ public class DDOL : UnitySingletonPersistent<DDOL> {
 
     // Use this for initialization
 	void Start () {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         GameStateManager.Instance.LoadScene("MainScreen");
     }
 
