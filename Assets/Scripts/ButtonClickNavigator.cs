@@ -7,12 +7,20 @@ using UnityEngine.UI;
 public class ButtonClickNavigator : MonoBehaviour {
 
     public string sceneName;
+    public bool isURL;
     Button thisButton;
 
     // Use this for initialization
     void Start () {
         thisButton = GetComponent<Button>();
-        thisButton.onClick.AddListener(delegate { loadScene(); });
+        if (isURL)
+        {
+            thisButton.onClick.AddListener(delegate { loadAboutURL(); });
+        }else
+        {
+            thisButton.onClick.AddListener(delegate { loadScene(); });
+        }
+        
 	}
 	
 	// Update is called once per frame
@@ -24,5 +32,11 @@ public class ButtonClickNavigator : MonoBehaviour {
     {
         AudioManager.Instance.PlaySound("TinyButtonPush");
         GameStateManager.Instance.LoadScene(sceneName);
+    }
+
+    void loadAboutURL()
+    {
+        AudioManager.Instance.PlaySound("TinyButtonPush");
+        Application.OpenURL("http://www.espol.edu.ec");
     }
 }
