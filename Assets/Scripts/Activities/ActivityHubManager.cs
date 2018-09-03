@@ -38,20 +38,22 @@ public class ActivityHubManager : MonoBehaviour {
 
     public void showExit(GameObject confirmPanelBack)
     {
-        AudioManager.Instance.PlaySound("TinyButtonPush");
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
+        AudioManager.Instance.PlayVoice("LoliSeguroSalir");
         confirmPanelBack.SetActive(true);
     }
 
 
     public void cancelExit(GameObject confirmPanelBack)
     {
-        AudioManager.Instance.PlaySound("TinyButtonPush");
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
+        AudioManager.Instance.StopAllVoices();
         confirmPanelBack.SetActive(false);
     }
 
     public void exitApp()
     {
-        AudioManager.Instance.PlaySound("TinyButtonPush");
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
         Application.Quit();
     }
 }

@@ -76,7 +76,7 @@ public class ActivityController : MonoBehaviour {
             }
         }
 
-        AudioManager.Instance.PlaySound(orderSoundName);
+        AudioManager.Instance.PlayVoice(orderSoundName);
 
 
         switch (GameStateManager.Instance.getCurrentSceneName())
@@ -91,9 +91,11 @@ public class ActivityController : MonoBehaviour {
                     SpawnBeing(false);
                     SpawnBeing(true);
                     SpawnBeing(false);
+                    SpawnBeing(false);
                 }
                 else
                 {
+                    SpawnBeing(true);
                     SpawnBeing(true);
                     SpawnBeing(false);
                     SpawnBeing(true);
@@ -193,7 +195,7 @@ public class ActivityController : MonoBehaviour {
         {
             newActivityOption.transform.SetParent(GameObject.Find("Options").transform);
             newActivityOption.transform.GetChild(0).transform.localPosition = new Vector3(0f, 2f, 0f);
-            newActivityOption.transform.GetChild(0).transform.localScale = new Vector3(0.55f, 0.55f, 0.55f);
+            newActivityOption.transform.GetChild(0).transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
 
         }
         else newActivityOption.transform.SetParent(GameObject.Find("OptionPanel").transform);
@@ -310,7 +312,7 @@ public class ActivityController : MonoBehaviour {
         else
         {
             //AudioManager.Instance.PlaySound("Lose");
-            AudioManager.Instance.PlaySound("LoliDeNuevo");
+            AudioManager.Instance.PlayVoice("LoliDeNuevo");
         }
 
 
@@ -348,7 +350,7 @@ public class ActivityController : MonoBehaviour {
         else
         {
             Debug.Log("PERDISTE");
-            AudioManager.Instance.PlaySound("LoliDeNuevo");
+            AudioManager.Instance.PlayVoice("LoliDeNuevo");
         }
 
 
@@ -360,7 +362,7 @@ public class ActivityController : MonoBehaviour {
     public void ReplayOrder()
     {
 
-        AudioManager.Instance.PlaySound(orderSoundName);
+        AudioManager.Instance.PlayVoice(orderSoundName);
 
         //if (order)
         //{
@@ -374,7 +376,7 @@ public class ActivityController : MonoBehaviour {
 
     IEnumerator win()
     {
-        AudioManager.Instance.PlaySound("LoliExcelente");
+        AudioManager.Instance.PlayVoice("LoliExcelente");
 
         yield return new WaitForSeconds(3);
 

@@ -4,11 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//public enum SFXOption
+//{
+//    Default = 0,
+//    Win = 1,
+//    Lose = 2
+//}
+
 public class ButtonClickNavigator : MonoBehaviour {
 
     public string sceneName;
     public bool isURL;
     Button thisButton;
+
+    //public SFXOption sfx;
 
     // Use this for initialization
     void Start () {
@@ -30,13 +39,13 @@ public class ButtonClickNavigator : MonoBehaviour {
 
     void loadScene()
     {
-        AudioManager.Instance.PlaySound("TinyButtonPush");
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
         GameStateManager.Instance.LoadScene(sceneName);
     }
 
     void loadAboutURL()
     {
-        AudioManager.Instance.PlaySound("TinyButtonPush");
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
         Application.OpenURL("http://www.espol.edu.ec");
     }
 }

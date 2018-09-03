@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : UnitySingleton<GameStateManager> {
 
-    private int sceneIndex;
+    //private int sceneIndex;
 
     // Use this for initialization
     void Start () {
@@ -23,6 +23,7 @@ public class GameStateManager : UnitySingleton<GameStateManager> {
 
     public void LoadScene(string sceneName)
     {
+        AudioManager.Instance.StopAllVoices();
         SceneManager.LoadScene(sceneName);
     }
 
@@ -47,5 +48,10 @@ public class GameStateManager : UnitySingleton<GameStateManager> {
     public string getCurrentSceneName()
     {
         return SceneManager.GetActiveScene().name;
+    }
+
+    public void ReloadCurrentScene()
+    {
+        LoadScene(getCurrentSceneName());
     }
 }

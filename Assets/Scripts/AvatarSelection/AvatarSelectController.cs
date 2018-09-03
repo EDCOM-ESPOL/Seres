@@ -13,7 +13,7 @@ public class AvatarSelectController : UnitySingleton<AvatarSelectController> {
 
     // Use this for initialization
     void Start () {
-        AudioManager.Instance.PlaySound("LoliEscogeAvatar");
+        AudioManager.Instance.PlayVoice("LoliEscogeAvatar");
     }
 
     // Update is called once per frame
@@ -21,25 +21,25 @@ public class AvatarSelectController : UnitySingleton<AvatarSelectController> {
 		
 	}
 
-    public void clickSelectAvatar(GameObject button)
+    public void ClickSelectAvatar(GameObject button)
     {
-        AudioManager.Instance.PlaySound("TinyButtonPush");
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
         Image originalAvatar = button.transform.Find("Image").GetComponent<Image>();  
         selectedAvatar = ConfirmPanelBack.transform.Find("Confirm Panel/Image").GetComponent<Image>();
         selectedAvatar.sprite = originalAvatar.sprite;
         ConfirmPanelBack.SetActive(true);
     }
 
-    public void clickCancelAvatar()
+    public void ClickCancelAvatar()
     {
-        AudioManager.Instance.PlaySound("TinyButtonPush");
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
         selectedAvatar = null;
         ConfirmPanelBack.SetActive(false);
     }
 
-    public void clickConfirmAvatar()
+    public void ClickConfirmAvatar()
     {
-        AudioManager.Instance.PlaySound("TinyButtonPush");
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
         SessionManager.Instance.setPlayerAvatar(selectedAvatar.sprite);
         GameStateManager.Instance.LoadScene("Story");
     }
