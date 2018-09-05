@@ -8,7 +8,7 @@ public class SessionManager : UnitySingleton<SessionManager> {
     private string playerId;
     private Sprite playerAvatar;
     private int[] playerScore = { 0,0,0,0};
-    private bool[] levels = { true, false, false, false, false };
+    private bool[] levels = { true, true, true, true };
 
 
     // Use this for initialization
