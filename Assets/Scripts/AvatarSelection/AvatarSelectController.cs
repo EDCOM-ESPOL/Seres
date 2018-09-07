@@ -8,7 +8,9 @@ using UnityEngine.UI;
 public class AvatarSelectController : UnitySingleton<AvatarSelectController> {
 
     public GameObject ConfirmPanelBack;
+    public InputField input;
     private Image selectedAvatar;
+    
 
 
     // Use this for initialization
@@ -40,7 +42,8 @@ public class AvatarSelectController : UnitySingleton<AvatarSelectController> {
     public void ClickConfirmAvatar()
     {
         AudioManager.Instance.PlaySFX("TinyButtonPush");
-        SessionManager.Instance.setPlayerAvatar(selectedAvatar.sprite);
+        SessionManager.Instance.SetPlayerInfo(selectedAvatar.sprite.name, input.text);
+        
         GameStateManager.Instance.LoadScene("Story");
     }
 }

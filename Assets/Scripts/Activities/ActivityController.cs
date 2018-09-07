@@ -221,7 +221,7 @@ public class ActivityController : MonoBehaviour {
         {
             ColorBlock oldCB;
             int[] scores = SessionManager.Instance.getPlayerScore();
-            bool[] levels = SessionManager.Instance.getLevels();
+            //bool[] levels = SessionManager.Instance.getLevels();
 
             switch (GameStateManager.Instance.getCurrentSceneName())
             {
@@ -230,11 +230,11 @@ public class ActivityController : MonoBehaviour {
                     activityFinished = true;
 
                     scores[0] = scores[0] + 1;
-                    if (levels[1] == false)
-                    {
-                        levels[1] = true;
-                        Debug.Log("Nivel 2 Activado");
-                    }
+                    //if (levels[1] == false)
+                    //{
+                    //    levels[1] = true;
+                    //    Debug.Log("Nivel 2 Activado");
+                    //}
                     break;
                 case "Activity2":
                     oldCB = GameObject.Find("Answer").GetComponent<Button>().colors;
@@ -246,11 +246,11 @@ public class ActivityController : MonoBehaviour {
                     activityFinished = true;
 
                     scores[1] = scores[1] + 1;
-                    if (levels[2] == false)
-                    {
-                        levels[2] = true;
-                        Debug.Log("Nivel 3 Activado");
-                    }
+                    //if (levels[2] == false)
+                    //{
+                    //    levels[2] = true;
+                    //    Debug.Log("Nivel 3 Activado");
+                    //}
                     break;
                 case "Activity3":
                     oldCB = buttonClicked.colors;
@@ -279,11 +279,11 @@ public class ActivityController : MonoBehaviour {
                     {
                         activityFinished = true;
                         scores[2] = scores[2] + 1;
-                        if (levels[3] == false)
-                        {
-                            levels[3] = true;
-                            Debug.Log("Nivel 4 Activado");
-                        }
+                        //if (levels[3] == false)
+                        //{
+                        //    levels[3] = true;
+                        //    Debug.Log("Nivel 4 Activado");
+                        //}
                     }
                     
                     break;
@@ -303,7 +303,7 @@ public class ActivityController : MonoBehaviour {
             if (activityFinished)
             {
                 SessionManager.Instance.setPlayerScore(scores);
-                SessionManager.Instance.setLevels(levels);
+                //SessionManager.Instance.setLevels(levels);
                 //AudioManager.Instance.PlaySound("Win");
                 StartCoroutine(win());
             }
@@ -323,7 +323,7 @@ public class ActivityController : MonoBehaviour {
     {
         //ColorBlock oldCB;
         int[] scores = SessionManager.Instance.getPlayerScore();
-        bool[] levels = SessionManager.Instance.getLevels();
+        //bool[] levels = SessionManager.Instance.getLevels();
 
         bool activityOption = GameObject.Find("OptionPanel").transform.GetChild(0).GetComponent<ActivityOption>().isAlive;
 
@@ -332,16 +332,16 @@ public class ActivityController : MonoBehaviour {
             Debug.Log("GANASTE");
             activityFinished = true;
             scores[3] = scores[3] + 1;
-            if (levels[4] == false)
-            {
-                levels[4] = true;
-                Debug.Log("Nivel 5 Activado");
-            }
+            //if (levels[4] == false)
+            //{
+            //    levels[4] = true;
+            //    Debug.Log("Nivel 5 Activado");
+            //}
 
             if (activityFinished)
             {
                 SessionManager.Instance.setPlayerScore(scores);
-                SessionManager.Instance.setLevels(levels);
+                //SessionManager.Instance.setLevels(levels);
                 //AudioManager.Instance.PlaySound("Win");
                 StartCoroutine(win());
             }

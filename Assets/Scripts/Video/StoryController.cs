@@ -8,10 +8,17 @@ public class StoryController : VideoController {
     public GameObject pauseButton;
     public GameObject playButton;
 
+    public StoryMetaData storyData;
+
     bool isPaused = false;
 
     // Use this for initialization
     void Start () {
+        //storyData = new StoryMetaData(SessionManager.Instance.nombre_jugador, System.Math.Round(player.clip.length).ToString());
+        //GameStateManager.Instance.SaveSession(storyData);
+        
+
+
         panel.SetActive(false);
     }
 	
@@ -21,6 +28,7 @@ public class StoryController : VideoController {
         {
             if (player.time >= 197.0f)
             {
+                storyData.estado = "completado";
                 panel.SetActive(true);
                 if (player.time >= 207.0f)
                 {

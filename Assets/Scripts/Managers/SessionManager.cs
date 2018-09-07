@@ -3,51 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class SessionManager : UnitySingleton<SessionManager> {
 
-    private string playerId;
-    private Sprite playerAvatar;
-    private int[] playerScore = { 0,0,0,0};
-    private bool[] levels = { true, true, true, true };
+    private string school = "ES001";
+    private string room = "R1";
+    
+    //public string PlayerAvatarName { get; set; }
+    //public string PlayerName { get; set; }
+    
+
+    public string tipo = "jugador";
+    public string avatar;
+    public string nombre_jugador;
 
 
-    // Use this for initialization
-    void Start () {
-        setPlayerID();
-        Debug.Log("Player ID: " + playerId);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private int[] playerScore = { 0, 0, 0, 0 };
+
+    //    {
+
+    //  "tipo":"jugador",
+
+    //  "avatar":"prueba",
+
+    //  "nombre_jugador":"ES001-R1-Marco"
+
+    //}
 
 
-    public string getPlayerID()
-    {
-        return this.playerId;
-    }
-
-    public void setPlayerID()
-    {
-        this.playerId = Random.Range(0, 100).ToString();
-    }
+    //private bool[] levels = { true, true, true, true };
 
 
-    public Sprite getPlayerAvatar()
-    {
-        return this.playerAvatar;
-    }
 
-    public void setPlayerAvatar(Sprite avatarSprite)
-    {
-        this.playerAvatar = avatarSprite;
-    }
 
-    public string getPlayerAvatarName()
-    {
-        return this.playerAvatar.name;
-    }
 
     public int[] getPlayerScore()
     {
@@ -59,13 +47,21 @@ public class SessionManager : UnitySingleton<SessionManager> {
         this.playerScore = score;
     }
 
-    public bool[] getLevels()
+    public void SetPlayerInfo(string avatar, string nombre_jugador)
     {
-        return this.levels;
+        this.avatar = avatar;
+        this.nombre_jugador = school + "-" + room + "-" + nombre_jugador;
+
+        GameStateManager.Instance.SendJSON(JsonUtility.ToJson(this));
     }
 
-    public void setLevels(bool[] levels)
-    {
-        this.levels = levels;
-    }
+    //public bool[] getLevels()
+    //{
+    //    return this.levels;
+    //}
+
+    //public void setLevels(bool[] levels)
+    //{
+    //    this.levels = levels;
+    //}
 }

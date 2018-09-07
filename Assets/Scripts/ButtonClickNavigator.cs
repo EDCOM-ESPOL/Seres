@@ -48,4 +48,7 @@ public class ButtonClickNavigator : MonoBehaviour {
         AudioManager.Instance.PlaySFX("TinyButtonPush");
         Application.OpenURL("http://www.espol.edu.ec");
     }
+
+
+
 }
