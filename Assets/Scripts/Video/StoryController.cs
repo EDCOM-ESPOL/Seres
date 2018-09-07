@@ -5,20 +5,15 @@ using UnityEngine;
 
 public class StoryController : VideoController {
 
-    public GameObject pauseButton;
-    public GameObject playButton;
+    
 
     public StoryMetaData storyData;
 
-    bool isPaused = false;
+    //bool isPaused = false;
 
     // Use this for initialization
     void Start () {
-        //storyData = new StoryMetaData(SessionManager.Instance.nombre_jugador, System.Math.Round(player.clip.length).ToString());
-        //GameStateManager.Instance.SaveSession(storyData);
-        
-
-
+        storyData = new StoryMetaData(SessionManager.Instance.nombre_jugador, System.Math.Round(player.clip.length).ToString());
         panel.SetActive(false);
     }
 	
@@ -32,9 +27,7 @@ public class StoryController : VideoController {
                 panel.SetActive(true);
                 if (player.time >= 207.0f)
                 {
-                    base.StopAndGoToScene("ActivityHub");
-                    //player.time = 198.0f;
-                    //player.Pause();
+                    SendJSONAndGoToScene("ActivityHub");
                 }
             }
             else
@@ -60,27 +53,35 @@ public class StoryController : VideoController {
 
     }
 
-    public void Pause()
-    {
-        AudioManager.Instance.PlaySFX("TinyButtonPush");
-        player.Pause();
-        pauseButton.SetActive(false);
-        playButton.SetActive(true);
-        isPaused = true;
-    }
+    //public void Pause()
+    //{
+    //    AudioManager.Instance.PlaySFX("TinyButtonPush");
+    //    player.Pause();
+    //    pauseButton.SetActive(false);
+    //    playButton.SetActive(true);
+    //    isPaused = true;
+    //}
 
-    public void UnPause()
-    {
-        AudioManager.Instance.PlaySFX("TinyButtonPush");
-        player.Play();
-        pauseButton.SetActive(true);
-        playButton.SetActive(false);
-        isPaused = false;
-    }
+    //public void UnPause()
+    //{
+    //    AudioManager.Instance.PlaySFX("TinyButtonPush");
+    //    player.Play();
+    //    pauseButton.SetActive(true);
+    //    playButton.SetActive(false);
+    //    isPaused = false;
+    //}
 
     public void Avanza()
     {
         player.time = 195.0f;
+    }
+
+    public void SendJSONAndGoToScene(string sceneName)
+    {
+        storyData.fecha_fin = System.DateTime.Now.ToString("yyyy/MM/dd");
+        storyData.tiempo_juego = System.Math.Round(player.time).ToString();
+        GameStateManager.Instance.SendJSON(JsonUtility.ToJson(storyData));
+        base.StopAndGoToScene(sceneName);
     }
 
 }

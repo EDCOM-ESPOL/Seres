@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class GameMetaData : ScriptableObject {
+[System.Serializable]
+public abstract class GameMetaData {
 
     public string tipo;
     public string id_registro;

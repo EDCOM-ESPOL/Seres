@@ -9,32 +9,12 @@ public class ActivityHubManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //AudioManager.Instance.PlaySound("LoliEscogeNivel");
+        AudioManager.Instance.PlayVoice("LoliEscogeNivel");
+        AudioManager.Instance.PlayMusic("BGM");
         activityButtons = GameObject.Find("ActivityButtonContainer").GetComponentsInChildren<Button>();
         //updateInterface(SessionManager.Instance.getLevels());
         
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    //public void updateInterface(bool[] levels)
-    //{
-
-    //    for (int i = 0; i < levels.Length; ++i)
-    //    {
-    //        if (levels[i] == true)
-    //        {
-    //            activityButtons[i].interactable = true;
-    //        }
-    //        else {
-    //            activityButtons[i].interactable = false;
-    //        }
-
-    //    }
-    //}
 
     public void showExit(GameObject confirmPanelBack)
     {

@@ -11,17 +11,11 @@ public class AvatarSelectController : UnitySingleton<AvatarSelectController> {
     public InputField input;
     private Image selectedAvatar;
     
-
-
+    
     // Use this for initialization
     void Start () {
         AudioManager.Instance.PlayVoice("LoliEscogeAvatar");
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 
     public void ClickSelectAvatar(GameObject button)
     {
@@ -35,15 +29,23 @@ public class AvatarSelectController : UnitySingleton<AvatarSelectController> {
     public void ClickCancelAvatar()
     {
         AudioManager.Instance.PlaySFX("TinyButtonPush");
+        input.text = "";
         selectedAvatar = null;
         ConfirmPanelBack.SetActive(false);
     }
 
     public void ClickConfirmAvatar()
     {
-        AudioManager.Instance.PlaySFX("TinyButtonPush");
-        SessionManager.Instance.SetPlayerInfo(selectedAvatar.sprite.name, input.text);
+        if (input.text == "")
+        {
+            AudioManager.Instance.PlaySFX("Lose");
+        }
+        else
+        {
+            AudioManager.Instance.PlaySFX("TinyButtonPush");
+            SessionManager.Instance.SetPlayerInfo(selectedAvatar.sprite.name, input.text);
+            GameStateManager.Instance.LoadScene("Story");
+        }
         
-        GameStateManager.Instance.LoadScene("Story");
     }
 }

@@ -16,7 +16,7 @@ public class GameStateManager : UnitySingleton<GameStateManager>
     // Use this for initialization
     void Start()
     {
-
+        AudioManager.Instance.PlayMusic("BGM");
         //sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
@@ -31,6 +31,7 @@ public class GameStateManager : UnitySingleton<GameStateManager>
 
     public void LoadScene(string sceneName)
     {
+        AudioManager.Instance.StopMusic("BGM");
         AudioManager.Instance.StopAllVoices();
         SceneManager.LoadScene(sceneName);
     }
@@ -63,15 +64,10 @@ public class GameStateManager : UnitySingleton<GameStateManager>
         LoadScene(getCurrentSceneName());
     }
 
-    public void SaveSession(GameMetaData data)
-    {
-        //StoryMetaData data = new StoryMetaData(SessionManager.Instance.getPlayerID().ToString());
-        Debug.Log(JsonUtility.ToJson(data));
-    }
+    
 
     public void SendJSON(string json)
     {
-        //StoryMetaData data = new StoryMetaData(SessionManager.Instance.getPlayerID().ToString());
         Debug.Log(json);
 
         Dictionary<string, string> postHeader = new Dictionary<string, string>
@@ -79,12 +75,9 @@ public class GameStateManager : UnitySingleton<GameStateManager>
             { "Content-Type", "application/json" }
         };
         byte[] body = Encoding.UTF8.GetBytes(json);
-        //Debug.Log(body);
         WWW www = new WWW(API_URL, body, postHeader);
         StartCoroutine("Upload", www);
 
-
-        //StartCoroutine(Upload(json));
 
     }
 
@@ -93,11 +86,11 @@ public class GameStateManager : UnitySingleton<GameStateManager>
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Data Submitted");
+            Debug.Log(www.error);
         }
         else
         {
-            Debug.Log(www.error);
+            Debug.Log("Data Submitted");
         }
 
 

@@ -6,150 +6,174 @@ using UnityEngine.UI;
 
 public class ActivityController : MonoBehaviour {
 
-    //public Sprite right;
-    //public Sprite wrong;
-    //public Text orderText;
-    //public Text scoreText;
     public GameObject activityOptionPrefab;
+    public GameObject options;
     public Sprite[] nonLivingSprites;
     public Sprite[] livingSprites;
-    //public Color right;
-    //public Color wrong;
     public Color[] myColors; //0 = white, 1 = green, 2 = red
 
+    private string activityName;
+    private readonly int numberOfSubLevels = 5;
+    private int score = 0;
+    private int errors = 0;
     private int activity3Flag = 0;
-    private bool activityFinished = false;
+    private bool subLevelFinished = false;
+    private ArrayList spritesAlreadyInUse;
 
-
-    private bool order;  //0 = no vivo ... 1 = vivo
+    private bool order;  //false = no vivo ... true = vivo
     private string orderSoundName;  //el nombre del audio que dará la orden en esta actividad
+
+    public LevelMetaData levelData;
 
 
     // Use this for initialization
-    void Start () {
+    void Start() {
+        AudioManager.Instance.PlayMusic("BGM");
+        activityName = GameStateManager.Instance.getCurrentSceneName();
 
-        int index = Random.Range(0, 2);
-        if (index == 0)
-        {
-            order = false;
-            //orderText.text = "Ser No Vivo";
+        levelData = new LevelMetaData(SessionManager.Instance.nombre_jugador, "Seres"+ activityName);
 
-            switch (GameStateManager.Instance.getCurrentSceneName())
-            {
-                case "Activity1":
-                    orderSoundName = "LoliSenalaNoVivo";
-                    break;
-                case "Activity2":
-                    orderSoundName = "LoliSenalaNoVivo";
-                    break;
-                case "Activity3":
-                    orderSoundName = "LoliTodosNoVivos";
-                    break;
-                case "Activity4":
-                    orderSoundName = "LoliEsNoVivo";
-                    break;
-                default:
-                    break;
-            }
-        }
-        else
-        {
-            order = true;
-            //orderText.text = "Ser Vivo";
+        spritesAlreadyInUse = new ArrayList();
 
-            switch (GameStateManager.Instance.getCurrentSceneName())
-            {
-                case "Activity1":
-                    orderSoundName = "LoliSenalaVivo";
-                    break;
-                case "Activity2":
-                    orderSoundName = "LoliSenalaVivo";
-                    break;
-                case "Activity3":
-                    orderSoundName = "LoliTodosVivos";
-                    break;
-                case "Activity4":
-                    orderSoundName = "LoliEsVivo";
-                    break;
-                default:
-                    break;
-            }
-        }
+        ResetOrder();
 
-        AudioManager.Instance.PlayVoice(orderSoundName);
+        Spawn();
 
+    }
 
-        switch (GameStateManager.Instance.getCurrentSceneName())
+    public void ResetOrder(){
+
+        bool i = System.Convert.ToBoolean(Random.Range(0, 2));
+        order = i;
+
+        switch (activityName)
         {
             case "Activity1":
-                SpawnBeing(false);
-                SpawnBeing(true);
-                break;
             case "Activity2":
                 if (order)
                 {
-                    SpawnBeing(false);
-                    SpawnBeing(true);
-                    SpawnBeing(false);
-                    SpawnBeing(false);
+                    orderSoundName = "LoliSeleccionaVivo";
                 }
-                else
-                {
-                    SpawnBeing(true);
-                    SpawnBeing(true);
-                    SpawnBeing(false);
-                    SpawnBeing(true);
-                }
+                else orderSoundName = "LoliSeleccionaNoVivo";
+
                 break;
             case "Activity3":
                 if (order)
                 {
-                    SpawnBeing(true);
-                    SpawnBeing(false);
-                    SpawnBeing(true);
+                    orderSoundName = "LoliTodosVivos";
                 }
-                else
-                {
-                    SpawnBeing(false);
-                    SpawnBeing(true);
-                    SpawnBeing(false);
-                }
+                else orderSoundName = "LoliTodosNoVivos";
+
                 break;
             case "Activity4":
-                int i = Random.Range(0, 2);
-                if (i == 0)
+                if (order)
                 {
-                    SpawnBeing(false);
+                    orderSoundName = "LoliEsVivo";
                 }
-                else
-                {
-                    SpawnBeing(true);
-                }
+                else orderSoundName = "LoliEsNoVivo";
+
                 break;
             default:
                 break;
         }
 
 
-
+        AudioManager.Instance.PlayVoice(orderSoundName);
     }
 
-    // Update is called once per frame
-    void Update () {
-        
+
+
+    public void Spawn()
+    {
+        bool modo;
+        int cols;
+        int rndCol;
+        bool[] p;
+
+        switch (activityName)
+        {
+            case "Activity1":
+                modo = System.Convert.ToBoolean(Random.Range(0,2));
+                SpawnBeing(modo);
+                SpawnBeing(!modo);
+
+                break;
+            case "Activity2":
+                cols = 4;
+
+                p = new bool[cols];
+
+                for (int i = 0; i < cols; i++)
+                {
+                    p[i] = !order;
+                }
+
+                rndCol = Random.Range(0, cols);
+                p[rndCol] = order;
+
+                for (int i = 0; i < cols; i++)
+                {
+                    SpawnBeing(p[i]);
+                }
+
+                break;
+            case "Activity3":
+                cols = 3;
+                
+                p = new bool[cols];
+
+                for (int i = 0; i < cols; i++)
+                {
+                    p[i] = order;
+                }
+
+                rndCol = Random.Range(0, cols);
+                p[rndCol] = !order;
+                
+                for (int i = 0; i < cols; i++)
+                {
+                    SpawnBeing(p[i]);
+                }
+
+                break;
+            case "Activity4":
+                modo = System.Convert.ToBoolean(Random.Range(0, 2));
+                SpawnBeing(modo);
+
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    public void ResPawn()
+    {
+        spritesAlreadyInUse.Clear();
+
+        foreach (Transform child in options.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        if (activityName == "Activity2")
+        {
+            ColorBlock oldCB;
+            GameObject ans = GameObject.Find("Answer");
+            oldCB = ans.GetComponent<Button>().colors;
+            oldCB.normalColor = myColors[0];
+            ans.GetComponent<Button>().colors = oldCB;
+
+            ans.transform.GetChild(0).GetComponent<Image>().sprite = null;
+        }
+
+        activity3Flag = 0;
+        subLevelFinished = false;
+        Spawn();
         
     }
 
-    //public int GetScore()
-    //{
-    //    return score;
-    //}
-
-    //public void SetScoreInScreen(int score)
-    //{
-    //    scoreText.text = score.ToString();
-    //}
-
+    
     public bool GetOrder()
     {
         return order;
@@ -163,7 +187,7 @@ public class ActivityController : MonoBehaviour {
         newActivityOption.GetComponent<ActivityOption>().isAlive = isAlive;
         ColorBlock oldCB = newActivityOption.GetComponent<Button>().colors;
 
-        if (GameStateManager.Instance.getCurrentSceneName() != "Activity4")
+        if (activityName != "Activity4")
         {
             if (isAlive == order)
             {
@@ -179,43 +203,75 @@ public class ActivityController : MonoBehaviour {
         newActivityOption.GetComponent<Button>().colors = oldCB;
 
         Sprite beingSprite;
+
+        Sprite spriteAux;
+
         if (isAlive)
         {
-            beingSprite = livingSprites[Random.Range(0, livingSprites.Length)];
+
+            spriteAux = livingSprites[Random.Range(0, livingSprites.Length)];
+
+            while (VerifySprite(spriteAux))
+            {
+                spriteAux = livingSprites[Random.Range(0, livingSprites.Length)];
+            }
+            spritesAlreadyInUse.Add(spriteAux.name);
+            beingSprite = spriteAux;
+            
         }
         else
         {
-            beingSprite = nonLivingSprites[Random.Range(0, nonLivingSprites.Length)];
+            spriteAux = nonLivingSprites[Random.Range(0, nonLivingSprites.Length)];
+
+            while (VerifySprite(spriteAux))
+            {
+                spriteAux = nonLivingSprites[Random.Range(0, nonLivingSprites.Length)];
+            }
+
+            spritesAlreadyInUse.Add(spriteAux.name);
+            beingSprite = spriteAux;
+        
         }
 
         newActivityOption.name = beingSprite.name;
         newActivityOption.transform.GetChild(0).GetComponent<Image>().sprite = beingSprite;
 
-        if (GameStateManager.Instance.getCurrentSceneName() == "Activity2")
+
+        newActivityOption.transform.SetParent(options.transform);
+
+        if (activityName == "Activity2")
         {
-            newActivityOption.transform.SetParent(GameObject.Find("Options").transform);
             newActivityOption.transform.GetChild(0).transform.localPosition = new Vector3(0f, 2f, 0f);
             newActivityOption.transform.GetChild(0).transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-
         }
-        else newActivityOption.transform.SetParent(GameObject.Find("OptionPanel").transform);
 
-        if (GameStateManager.Instance.getCurrentSceneName() == "Activity4")
+
+        if (activityName != "Activity4")
         {
-            newActivityOption.transform.SetAsFirstSibling();
-        }else newActivityOption.GetComponent<Button>().onClick.AddListener(delegate { EvaluateOnClick(newActivityOption.GetComponent<Button>()); });
+            newActivityOption.GetComponent<Button>().onClick.AddListener(delegate { EvaluateOnClick(newActivityOption.GetComponent<Button>()); });
+        }
 
         newActivityOption.transform.localScale = new Vector3(1f, 1f, 1f);
         
     }
 
+    public bool VerifySprite(Sprite rndSprite)
+    {
 
+        foreach (string item in spritesAlreadyInUse)
+        {
+            if (item == rndSprite.name)
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 
 
     public void EvaluateOnClick(Button buttonClicked)
     {
-
-        //bool order = GameObject.Find("ActivityController").GetComponent<ActivityController>().GetOrder();
 
         if (buttonClicked.GetComponent<ActivityOption>().isAlive == this.GetOrder())
         {
@@ -223,18 +279,15 @@ public class ActivityController : MonoBehaviour {
             int[] scores = SessionManager.Instance.getPlayerScore();
             //bool[] levels = SessionManager.Instance.getLevels();
 
-            switch (GameStateManager.Instance.getCurrentSceneName())
+            switch (activityName)
             {
                 case "Activity1":
-
-                    activityFinished = true;
-
+                    
                     scores[0] = scores[0] + 1;
-                    //if (levels[1] == false)
-                    //{
-                    //    levels[1] = true;
-                    //    Debug.Log("Nivel 2 Activado");
-                    //}
+                    score++;
+                    Debug.Log(score);
+                    subLevelFinished = true;
+
                     break;
                 case "Activity2":
                     oldCB = GameObject.Find("Answer").GetComponent<Button>().colors;
@@ -243,14 +296,10 @@ public class ActivityController : MonoBehaviour {
 
                     GameObject.Find("Answer").transform.GetChild(0).GetComponent<Image>().sprite = buttonClicked.transform.GetChild(0).GetComponent<Image>().sprite;
 
-                    activityFinished = true;
-
                     scores[1] = scores[1] + 1;
-                    //if (levels[2] == false)
-                    //{
-                    //    levels[2] = true;
-                    //    Debug.Log("Nivel 3 Activado");
-                    //}
+                    score++;
+                    subLevelFinished = true;
+
                     break;
                 case "Activity3":
                     oldCB = buttonClicked.colors;
@@ -269,7 +318,7 @@ public class ActivityController : MonoBehaviour {
                         oldCB.highlightedColor = myColors[1];
                         buttonClicked.colors = oldCB;
                         buttonClicked.GetComponent<ActivityOption>().selected = true;
-                        activity3Flag = activity3Flag + 1;
+                        activity3Flag++;
                     }
 
                     
@@ -277,35 +326,24 @@ public class ActivityController : MonoBehaviour {
 
                     if (activity3Flag >= 2)
                     {
-                        activityFinished = true;
                         scores[2] = scores[2] + 1;
-                        //if (levels[3] == false)
-                        //{
-                        //    levels[3] = true;
-                        //    Debug.Log("Nivel 4 Activado");
-                        //}
+                        score++;
+                        subLevelFinished = true;
                     }
                     
                     break;
-                //case "Activity4":
-                //    scores[3] = scores[3] + 1;
-                //    if (levels[4] == false)
-                //    {
-                //        levels[4] = true;
-                //        Debug.Log("Nivel 5 Activado");
-                //    }
-                //    break;
+
                 default:
                     break;
             }
 
 
-            if (activityFinished)
+            if (subLevelFinished)
             {
                 SessionManager.Instance.setPlayerScore(scores);
                 //SessionManager.Instance.setLevels(levels);
                 //AudioManager.Instance.PlaySound("Win");
-                StartCoroutine(win());
+                StartCoroutine(Win());
             }
 
         }
@@ -313,6 +351,7 @@ public class ActivityController : MonoBehaviour {
         {
             //AudioManager.Instance.PlaySound("Lose");
             AudioManager.Instance.PlayVoice("LoliDeNuevo");
+            errors++;
         }
 
 
@@ -321,36 +360,31 @@ public class ActivityController : MonoBehaviour {
 
     public void EvaluateOnClickAct4(bool answer)
     {
-        //ColorBlock oldCB;
+        
         int[] scores = SessionManager.Instance.getPlayerScore();
-        //bool[] levels = SessionManager.Instance.getLevels();
-
-        bool activityOption = GameObject.Find("OptionPanel").transform.GetChild(0).GetComponent<ActivityOption>().isAlive;
+        
+        bool activityOption = options.transform.GetChild(0).GetComponent<ActivityOption>().isAlive;
 
         if (((order == answer) & activityOption) | ((order != answer) & !activityOption) )
         {
-            Debug.Log("GANASTE");
-            activityFinished = true;
             scores[3] = scores[3] + 1;
-            //if (levels[4] == false)
-            //{
-            //    levels[4] = true;
-            //    Debug.Log("Nivel 5 Activado");
-            //}
+            score++;
+            
 
-            if (activityFinished)
-            {
+            //if (activityFinished)
+            //{
                 SessionManager.Instance.setPlayerScore(scores);
                 //SessionManager.Instance.setLevels(levels);
                 //AudioManager.Instance.PlaySound("Win");
-                StartCoroutine(win());
-            }
+                StartCoroutine(Win());
+            //}
 
         }
         else
         {
-            Debug.Log("PERDISTE");
+
             AudioManager.Instance.PlayVoice("LoliDeNuevo");
+            errors++;
         }
 
 
@@ -361,24 +395,39 @@ public class ActivityController : MonoBehaviour {
 
     public void ReplayOrder()
     {
-
         AudioManager.Instance.PlayVoice(orderSoundName);
-
-        //if (order)
-        //{
-        //    AudioManager.Instance.PlaySound("LoliSenalaVivo");   
-        //}
-        //else
-        //{
-        //    AudioManager.Instance.PlaySound("LoliSenalaNoVivo");
-        //}
     }
 
-    IEnumerator win()
+    IEnumerator Win()
     {
         AudioManager.Instance.PlayVoice("LoliExcelente");
-
         yield return new WaitForSeconds(3);
+
+        if (score >= numberOfSubLevels)
+        {
+            EndLevel("completado");
+        }
+        else
+        {
+            ResetOrder();
+            ResPawn();
+        }
+        
+    }
+
+    public void EndLevel(string status)
+    {
+        if (status == "abandonado")
+        {
+            AudioManager.Instance.PlaySFX("TinyButtonPush");
+        }
+
+        levelData.estado = status;
+        levelData.fecha_fin = System.DateTime.Now.ToString("yyyy/MM/dd");
+        levelData.tiempo_juego = System.Math.Round(Time.timeSinceLevelLoad).ToString();
+        levelData.correctas = score.ToString();
+        levelData.incorrectas = errors.ToString();
+        GameStateManager.Instance.SendJSON(JsonUtility.ToJson(levelData));
 
         GameStateManager.Instance.LoadScene("ActivityHub");
     }

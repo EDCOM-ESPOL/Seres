@@ -7,8 +7,11 @@ public class VideoController : MonoBehaviour {
 
     public VideoPlayer player;
     public GameObject panel;
-    
-    
+    public GameObject pauseButton;
+    public GameObject playButton;
+
+    protected bool isPaused = false;
+
 
     // Use this for initialization
     void Start () {
@@ -39,7 +42,23 @@ public class VideoController : MonoBehaviour {
         panel.SetActive(true);
     }
 
-    
+    public void Pause()
+    {
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
+        player.Pause();
+        pauseButton.SetActive(false);
+        playButton.SetActive(true);
+        isPaused = true;
+    }
+
+    public void UnPause()
+    {
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
+        player.Play();
+        pauseButton.SetActive(true);
+        playButton.SetActive(false);
+        isPaused = false;
+    }
 
 
 

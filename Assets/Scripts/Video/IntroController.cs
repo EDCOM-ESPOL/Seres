@@ -6,6 +6,7 @@ using UnityEngine.Video;
 public class IntroController : VideoController {
 
     public GameObject audioSource;
+    public GameObject buttonContainer;
     AudioSource audioA;
     bool fade = false;
 
@@ -27,6 +28,7 @@ public class IntroController : VideoController {
         if (player.time >= 34.0f)
         {
             panel.SetActive(true);
+            buttonContainer.SetActive(false);
             if (player.time >= 37.2f) fade = true;
             if (player.time >= 39.6f)
             {      
@@ -37,6 +39,7 @@ public class IntroController : VideoController {
         else
         {
             fade = false;
+            buttonContainer.SetActive(true);
             panel.SetActive(false);
         }
 
