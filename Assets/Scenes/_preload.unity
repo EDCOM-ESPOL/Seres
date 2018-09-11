@@ -1475,6 +1475,7 @@ GameObject:
   - component: {fileID: 1277416764}
   - component: {fileID: 1277416765}
   - component: {fileID: 1277416766}
+  - component: {fileID: 1277416767}
   m_Layer: 0
   m_Name: __app
   m_TagString: Untagged
@@ -1546,6 +1547,18 @@ MonoBehaviour:
   MusicAudioSources: []
   SFXAudioSources: []
   VoiceAudioSources: []
+--- !u!114 &1277416767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1277416761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712eb502487671e43b6110307cc7d07d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localJSON: []
 --- !u!1 &1307861801
 GameObject:
   m_ObjectHideFlags: 0

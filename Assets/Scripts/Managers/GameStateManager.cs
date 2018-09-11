@@ -1,6 +1,8 @@
 ﻿using DigitalRuby.SoundManagerNamespace;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -16,6 +18,7 @@ public class GameStateManager : UnitySingleton<GameStateManager>
     // Use this for initialization
     void Start()
     {
+        print(Application.persistentDataPath);
         AudioManager.Instance.PlayMusic("BGM");
         //sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
@@ -70,13 +73,15 @@ public class GameStateManager : UnitySingleton<GameStateManager>
     {
         Debug.Log(json);
 
-        Dictionary<string, string> postHeader = new Dictionary<string, string>
-        {
-            { "Content-Type", "application/json" }
-        };
-        byte[] body = Encoding.UTF8.GetBytes(json);
-        WWW www = new WWW(API_URL, body, postHeader);
-        StartCoroutine("Upload", www);
+        SaveLocal(json);
+
+        //Dictionary<string, string> postHeader = new Dictionary<string, string>
+        //{
+        //    { "Content-Type", "application/json" }
+        //};
+        //byte[] body = Encoding.UTF8.GetBytes(json);
+        //WWW www = new WWW(API_URL, body, postHeader);
+        //StartCoroutine("Upload", www);
 
 
     }
@@ -117,4 +122,59 @@ public class GameStateManager : UnitySingleton<GameStateManager>
         //}
     }
 
+
+    public List<string> ReadLocalFile()
+    {
+        List<string> save = new List<string>();
+        if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
+        {
+            Debug.Log("SAVE DATA FOUND");
+            try
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
+                save = (List<string>)bf.Deserialize(file);
+                file.Close();
+                return save;
+            }
+            catch (System.Exception)
+            {
+                Debug.Log("ERROR READING FILE");
+                throw;
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("SAVE DATA NOT FOUND");
+            return save;
+        }
+
+    }
+
+    public void SaveLocal(string json)
+    {
+
+        List<string> save = ReadLocalFile();
+        Debug.Log(save.Count);
+
+        save.Add(json);
+
+        try
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+            bf.Serialize(file, save);
+            file.Close();
+
+            Debug.Log("Saved Locally");
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("ERROR SAVING FILE");
+            throw;
+        }
+
+    }
 }
