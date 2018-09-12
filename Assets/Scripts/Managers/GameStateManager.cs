@@ -67,23 +67,42 @@ public class GameStateManager : UnitySingleton<GameStateManager>
         LoadScene(getCurrentSceneName());
     }
 
-    
+    public bool CheckNet()
+    {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            Debug.Log("Error. Check internet connection!");
+            return false;
+        }
+        return true;
+    }
 
     public void SendJSON(string json)
     {
+        List<string> jsonList = ReadLocalFile();
         Debug.Log(json);
 
-        SaveLocal(json);
+        if (!CheckNet())
+        {
+            jsonList.Add(json);
 
-        //Dictionary<string, string> postHeader = new Dictionary<string, string>
-        //{
-        //    { "Content-Type", "application/json" }
-        //};
-        //byte[] body = Encoding.UTF8.GetBytes(json);
-        //WWW www = new WWW(API_URL, body, postHeader);
-        //StartCoroutine("Upload", www);
-
-
+            foreach (string jsonItem in jsonList)
+            {
+                //Dictionary<string, string> postHeader = new Dictionary<string, string>
+                //{
+                //    { "Content-Type", "application/json" }
+                //};
+                //byte[] body = Encoding.UTF8.GetBytes(jsonItem);
+                //WWW www = new WWW(API_URL, body, postHeader);
+                //StartCoroutine("Upload", www);
+            }
+        }
+        else
+        {
+            jsonList.Add(json);
+            SaveLocal(jsonList);
+        }
+        
     }
 
     IEnumerator Upload(WWW www)
@@ -143,7 +162,6 @@ public class GameStateManager : UnitySingleton<GameStateManager>
                 throw;
             }
 
-
         }
         else
         {
@@ -153,19 +171,13 @@ public class GameStateManager : UnitySingleton<GameStateManager>
 
     }
 
-    public void SaveLocal(string json)
+    public void SaveLocal(List<string> jsonList)
     {
-
-        List<string> save = ReadLocalFile();
-        Debug.Log(save.Count);
-
-        save.Add(json);
-
         try
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
-            bf.Serialize(file, save);
+            bf.Serialize(file, jsonList);
             file.Close();
 
             Debug.Log("Saved Locally");
@@ -178,3 +190,23 @@ public class GameStateManager : UnitySingleton<GameStateManager>
 
     }
 }
+
+
+
+
+
+//check connection
+
+//true
+//	check file
+//		true
+//			Load file
+
+//            add JSON to List
+	
+//	for each json in list
+//        upload json
+//false
+//	add JSON to List
+
+//    save List locally
