@@ -427,7 +427,7 @@ public class ActivityController : MonoBehaviour {
         levelData.tiempo_juego = System.Math.Round(Time.timeSinceLevelLoad).ToString();
         levelData.correctas = score.ToString();
         levelData.incorrectas = errors.ToString();
-        GameStateManager.Instance.SendJSON(JsonUtility.ToJson(levelData));
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(levelData));
 
         GameStateManager.Instance.LoadScene("ActivityHub");
     }

@@ -80,7 +80,8 @@ public class StoryController : VideoController {
     {
         storyData.fecha_fin = System.DateTime.Now.ToString("yyyy/MM/dd");
         storyData.tiempo_juego = System.Math.Round(player.time).ToString();
-        GameStateManager.Instance.SendJSON(JsonUtility.ToJson(storyData));
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(storyData));
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
         base.StopAndGoToScene(sceneName);
     }
 

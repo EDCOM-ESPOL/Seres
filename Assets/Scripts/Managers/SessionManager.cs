@@ -52,7 +52,7 @@ public class SessionManager : UnitySingleton<SessionManager> {
         this.avatar = avatar;
         this.nombre_jugador = school + "-" + room + "-" + nombre_jugador;
 
-        GameStateManager.Instance.SendJSON(JsonUtility.ToJson(this));
+        GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(this));
     }
 
     //public bool[] getLevels()

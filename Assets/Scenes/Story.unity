@@ -880,7 +880,6 @@ GameObject:
   - component: {fileID: 1305456226}
   - component: {fileID: 1305456225}
   - component: {fileID: 1305456224}
-  - component: {fileID: 1305456223}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -906,19 +905,6 @@ RectTransform:
   m_AnchoredPosition: {x: 170, y: -200}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1305456223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1305456221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a8936584bcef054198d6871521ae7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Character
-  isURL: 0
 --- !u!114 &1305456224
 MonoBehaviour:
   m_ObjectHideFlags: 0
