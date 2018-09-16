@@ -10,19 +10,23 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : UnitySingleton<GameStateManager>
 {
+    private const string SERVER_URL = "http://midiapi.espol.edu.ec";
+    //private const string SERVER_URL = "http://hidden-wildwood-12729.herokuapp.com";
+    private const string API_URL = SERVER_URL + "/api/v1/entrance/AlmacenarDatosController";
 
-    private const string API_URL = "http://hidden-wildwood-12729.herokuapp.com/api/v1/entrance/AlmacenarDatosController";
     private List<string> jsonList = new List<string>();
+    private bool IsConnectedToServer = false;
+
 
 
     // Use this for initialization
-    void Start()
+    IEnumerator Start()
     {
+        print(API_URL);
+        if (CheckNet()) yield return StartCoroutine(CheckServer());
         print(Application.persistentDataPath);
-        //AudioManager.Instance.PlayMusic("BGM");
         ReadLocalFile();
         StartCoroutine(SyncJsonData());
-        //sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -69,16 +73,47 @@ public class GameStateManager : UnitySingleton<GameStateManager>
         LoadScene(getCurrentSceneName());
     }
 
+
+    public void PrintJsonList()
+    {
+        foreach (string jsonItem in jsonList)
+        {
+                print("JSONList["+ jsonList.IndexOf(jsonItem) +"] = "+jsonItem);
+        }
+    }
+
+
     public bool CheckNet()
     {
-        //return true;
-
-        if (Application.internetReachability == NetworkReachability.NotReachable)
+        if (Application.internetReachability != NetworkReachability.NotReachable)
         {
-            Debug.Log("Error. Check internet connection!");
-            return false;
+            return true;
         }
-        return true;
+        Debug.Log("Error. Check internet connection!");
+        return false;   
+    }
+
+    IEnumerator CheckServer()
+    {
+        WWW www = new WWW(SERVER_URL);
+        Debug.Log("CONNECTING TO SERVER...");
+        yield return StartCoroutine("StartUpload", www);
+
+        if (www.error != null)
+        {
+            Debug.Log("THIS IS AN ERROR: " + www.error);
+            IsConnectedToServer = false;
+        }
+        else
+        {
+            Debug.Log("CONNECTED TO SERVER");
+            IsConnectedToServer = true;
+        }
+    }
+
+    public void PingFinished(Ping p)
+    {
+        print(p);
     }
 
     public void AddJsonToList(string json)
@@ -93,14 +128,14 @@ public class GameStateManager : UnitySingleton<GameStateManager>
         //List<string> jsonList = ReadLocalFile();
         //Debug.Log("New JSON: " + json);
 
-        if (CheckNet())
+        if (CheckNet() && IsConnectedToServer)
         {
-            Debug.Log("CONNECTION ESTABLISHED");
-            //jsonList.Add(json);
+            PrintJsonList();
+            Debug.Log("READY TO UPLOAD");
+            List<string> sendedJsonItems = new List<string>();
 
             foreach (string jsonItem in jsonList)
             {
-                print("JSONList["+ jsonList.IndexOf(jsonItem) +"] = "+jsonItem);
 
                 Dictionary<string, string> postHeader = new Dictionary<string, string>
                 {
@@ -108,33 +143,79 @@ public class GameStateManager : UnitySingleton<GameStateManager>
                 };
                 byte[] body = Encoding.UTF8.GetBytes(jsonItem);
                 WWW www = new WWW(API_URL, body, postHeader);
-                yield return StartCoroutine("Upload", www);
+                Debug.Log("CONNECTING TO SERVER...");
+                yield return StartCoroutine("StartUpload", www);
+
+                if (www.error != null)
+                {
+                    Debug.Log("THIS IS AN ERROR: " + www.error);
+                    IsConnectedToServer = false;
+                    break;
+                }
+                else
+                {
+                    Debug.Log("Data Submitted");
+                    sendedJsonItems.Add(jsonItem);
+                }
             }
 
-            print(jsonList.Count + " FILE(S) UPLOADED");
-            DeleteSaveFile();
+            print(sendedJsonItems.Count + " FILE(S) UPLOADED");
+
+            foreach (string sended in sendedJsonItems)
+            {
+                jsonList.Remove(sended);
+            }
+
+            sendedJsonItems.Clear();
+
         }
         else
         {
             Debug.Log("CONNECTION NOT ESTABLISHED");
-            //jsonList.Add(json);
-            SaveLocal();
         }
-        jsonList.Clear();
+
+        print(jsonList.Count + " JSON(S) NOT UPLOADED");
+        
+
+        SaveLocal();
 
     }
 
-    IEnumerator Upload(WWW www)
+    //bool UploadItem(string item)
+    //{
+    //    Dictionary<string, string> postHeader = new Dictionary<string, string>
+    //            {
+    //                { "Content-Type", "application/json" }
+    //            };
+    //    byte[] body = Encoding.UTF8.GetBytes(item);
+    //    WWW www = new WWW(API_URL, body, postHeader);
+    //    yield return StartCoroutine("StartUpload", www);
+
+    //    if (www.error != null)
+    //    {
+    //        Debug.Log(www.error);
+    //        return false;
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Data Submitted");
+    //        return true;
+    //    }
+
+    //}
+
+
+    IEnumerator StartUpload(WWW www)
     {
         yield return www;
-        if (www.error != null)
-        {
-            Debug.Log(www.error);
-        }
-        else
-        {
-            Debug.Log("Data Submitted");
-        }
+        //if (www.error != null)
+        //{
+        //    Debug.Log(www.error);
+        //}
+        //else
+        //{
+        //    Debug.Log("Data Submitted");
+        //}
 
 
         // convert json string to byte
@@ -163,8 +244,6 @@ public class GameStateManager : UnitySingleton<GameStateManager>
 
     public void ReadLocalFile()
     {
-        //List<string> fileList = new List<string>();
-
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
             Debug.Log("SAVE DATA FOUND");
@@ -174,13 +253,6 @@ public class GameStateManager : UnitySingleton<GameStateManager>
                 FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
                 jsonList = (List<string>)bf.Deserialize(file);
                 file.Close();
-
-                //foreach (string fileListItem in fileList)
-                //{
-                //    jsonList.Add()
-                //}
-
-                //return save;
             }
             catch (System.Exception)
             {
@@ -192,7 +264,6 @@ public class GameStateManager : UnitySingleton<GameStateManager>
         else
         {
             Debug.Log("READING - SAVE DATA NOT FOUND");
-            //return save;
         }
 
     }

@@ -46,7 +46,7 @@ public class ButtonClickNavigator : MonoBehaviour {
     void loadAboutURL()
     {
         AudioManager.Instance.PlaySFX("TinyButtonPush");
-        Application.OpenURL("http://www.midi.espol.edu.ec");
+        Application.OpenURL("http://midiapi.espol.edu.ec");
     }
 
 
