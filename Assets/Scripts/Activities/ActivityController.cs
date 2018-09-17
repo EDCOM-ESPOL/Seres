@@ -23,12 +23,15 @@ public class ActivityController : MonoBehaviour {
     private bool order;  //false = no vivo ... true = vivo
     private string orderSoundName;  //el nombre del audio que dará la orden en esta actividad
 
+    private readonly string[] LoliVoicesCorrect = { "LoliExcelente", "LoliRespondisteMuybien", "LoliBienSigueAsi", "LoliEsoEstuvoGenial" };
+    private readonly string[] LoliVoicesWrong = { "LoliDeNuevo", "LoliIntentaloOtraVez", "LoliNoTeDesanimes", "LoliPuedesHacerloMejor" };
+
     public LevelMetaData levelData;
 
 
     // Use this for initialization
     void Start() {
-        AudioManager.Instance.PlayMusic("BGM");
+        //AudioManager.Instance.PlayMusic("BGM");
         activityName = GameStateManager.Instance.getCurrentSceneName();
 
         levelData = new LevelMetaData(SessionManager.Instance.nombre_jugador, "Seres"+ activityName);
@@ -269,6 +272,10 @@ public class ActivityController : MonoBehaviour {
         return false;
     }
 
+    public string RndVoiceGenerator(string[] voices)
+    {
+        return voices[Random.Range(0, voices.Length)];
+    }
 
     public void EvaluateOnClick(Button buttonClicked)
     {
@@ -350,7 +357,7 @@ public class ActivityController : MonoBehaviour {
         else
         {
             //AudioManager.Instance.PlaySound("Lose");
-            AudioManager.Instance.PlayVoice("LoliDeNuevo");
+            AudioManager.Instance.PlayVoice(RndVoiceGenerator(LoliVoicesWrong));
             errors++;
         }
 
@@ -383,7 +390,7 @@ public class ActivityController : MonoBehaviour {
         else
         {
 
-            AudioManager.Instance.PlayVoice("LoliDeNuevo");
+            AudioManager.Instance.PlayVoice(RndVoiceGenerator(LoliVoicesWrong));
             errors++;
         }
 
@@ -398,9 +405,11 @@ public class ActivityController : MonoBehaviour {
         AudioManager.Instance.PlayVoice(orderSoundName);
     }
 
+
     IEnumerator Win()
     {
-        AudioManager.Instance.PlayVoice("LoliExcelente");
+        AudioManager.Instance.PlayVoice(RndVoiceGenerator(LoliVoicesCorrect));
+
         yield return new WaitForSeconds(3);
 
         if (score >= numberOfSubLevels)

@@ -24,7 +24,8 @@ public class VideoController : MonoBehaviour {
     public void Replay()
     {
         AudioManager.Instance.PlaySFX("TinyButtonPush");
-        GameStateManager.Instance.ReloadCurrentScene();      
+        print("Reloading Scene...");
+        GameStateManager.Instance.ReloadCurrentScene();
     }
 
     public void Stop()

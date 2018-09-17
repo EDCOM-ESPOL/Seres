@@ -40,6 +40,20 @@ public class ButtonClickNavigator : MonoBehaviour {
     void loadScene()
     {
         AudioManager.Instance.PlaySFX("TinyButtonPush");
+
+        if (GameStateManager.Instance.getCurrentSceneName() == "MainScreen")
+        {
+            thisButton.interactable = false;
+            StartCoroutine(PlayLoliStartAudio());
+        }else GameStateManager.Instance.LoadScene(sceneName);
+
+
+    }
+
+    IEnumerator PlayLoliStartAudio()
+    {
+        AudioManager.Instance.PlayVoice("LoliEmpecemos");
+        yield return new WaitForSeconds(2);
         GameStateManager.Instance.LoadScene(sceneName);
     }
 
