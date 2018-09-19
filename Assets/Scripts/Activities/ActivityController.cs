@@ -13,7 +13,7 @@ public class ActivityController : MonoBehaviour {
     public Color[] myColors; //0 = white, 1 = green, 2 = red
 
     private string activityName;
-    private readonly int numberOfSubLevels = 5;
+    private readonly int numberOfSubLevels = 10;
     private int score = 0;
     private int errors = 0;
     private int activity3Flag = 0;
@@ -84,7 +84,25 @@ public class ActivityController : MonoBehaviour {
         AudioManager.Instance.PlayVoice(orderSoundName);
     }
 
+    public void DisableAllButtons()
+    {
+        Button[] buttons = FindObjectsOfType<Button>();
+        foreach (Button button in buttons)
+        {
+            //print(button);
+            button.interactable = false;
+        }
+    }
 
+    public void EnableAllButtons()
+    {
+        Button[] buttons = FindObjectsOfType<Button>();
+        foreach (Button button in buttons)
+        {
+            //print(button);
+            button.interactable = true;
+        }
+    }
 
     public void Spawn()
     {
@@ -164,7 +182,7 @@ public class ActivityController : MonoBehaviour {
             ColorBlock oldCB;
             GameObject ans = GameObject.Find("Answer");
             oldCB = ans.GetComponent<Button>().colors;
-            oldCB.normalColor = myColors[0];
+            oldCB.disabledColor = myColors[0];
             ans.GetComponent<Button>().colors = oldCB;
 
             ans.transform.GetChild(0).GetComponent<Image>().sprite = null;
@@ -173,7 +191,8 @@ public class ActivityController : MonoBehaviour {
         activity3Flag = 0;
         subLevelFinished = false;
         Spawn();
-        
+
+        EnableAllButtons();
     }
 
     
@@ -200,8 +219,10 @@ public class ActivityController : MonoBehaviour {
             {
                 oldCB.pressedColor = myColors[2];
             }
-        }
             
+        }
+        oldCB.disabledColor = myColors[0];
+
 
         newActivityOption.GetComponent<Button>().colors = oldCB;
 
@@ -279,10 +300,15 @@ public class ActivityController : MonoBehaviour {
 
     public void EvaluateOnClick(Button buttonClicked)
     {
+        //DisableAllButtons();
+        ColorBlock oldCB;
 
         if (buttonClicked.GetComponent<ActivityOption>().isAlive == this.GetOrder())
         {
-            ColorBlock oldCB;
+            oldCB = buttonClicked.colors;
+            oldCB.disabledColor = myColors[1];
+            buttonClicked.colors = oldCB;
+
             int[] scores = SessionManager.Instance.getPlayerScore();
             //bool[] levels = SessionManager.Instance.getLevels();
 
@@ -290,6 +316,7 @@ public class ActivityController : MonoBehaviour {
             {
                 case "Activity1":
                     
+
                     scores[0] = scores[0] + 1;
                     score++;
                     Debug.Log(score);
@@ -298,7 +325,8 @@ public class ActivityController : MonoBehaviour {
                     break;
                 case "Activity2":
                     oldCB = GameObject.Find("Answer").GetComponent<Button>().colors;
-                    oldCB.normalColor = myColors[1];
+                    oldCB.disabledColor = myColors[1];
+
                     GameObject.Find("Answer").GetComponent<Button>().colors = oldCB;
 
                     GameObject.Find("Answer").transform.GetChild(0).GetComponent<Image>().sprite = buttonClicked.transform.GetChild(0).GetComponent<Image>().sprite;
@@ -315,6 +343,7 @@ public class ActivityController : MonoBehaviour {
                     {
                         oldCB.normalColor = myColors[0];
                         oldCB.highlightedColor = myColors[0];
+                        oldCB.disabledColor = myColors[0];
                         buttonClicked.colors = oldCB;
                         buttonClicked.GetComponent<ActivityOption>().selected = false;
                         activity3Flag = activity3Flag - 1;
@@ -323,6 +352,7 @@ public class ActivityController : MonoBehaviour {
                     {    
                         oldCB.normalColor = myColors[1];
                         oldCB.highlightedColor = myColors[1];
+                        oldCB.disabledColor = myColors[1];
                         buttonClicked.colors = oldCB;
                         buttonClicked.GetComponent<ActivityOption>().selected = true;
                         activity3Flag++;
@@ -350,15 +380,21 @@ public class ActivityController : MonoBehaviour {
                 SessionManager.Instance.setPlayerScore(scores);
                 //SessionManager.Instance.setLevels(levels);
                 //AudioManager.Instance.PlaySound("Win");
+                DisableAllButtons();
                 StartCoroutine(Win());
             }
 
         }
         else
         {
-            //AudioManager.Instance.PlaySound("Lose");
-            AudioManager.Instance.PlayVoice(RndVoiceGenerator(LoliVoicesWrong));
-            errors++;
+            oldCB = buttonClicked.colors;
+            oldCB.disabledColor = myColors[2];
+            buttonClicked.colors = oldCB;
+
+            DisableAllButtons();
+            StartCoroutine(Wrong());
+
+            
         }
 
 
@@ -368,32 +404,36 @@ public class ActivityController : MonoBehaviour {
     public void EvaluateOnClickAct4(bool answer)
     {
         
+
         int[] scores = SessionManager.Instance.getPlayerScore();
         
-        bool activityOption = options.transform.GetChild(0).GetComponent<ActivityOption>().isAlive;
+        Transform option = options.transform.GetChild(0);
+        
+        ColorBlock oldCB = option.GetComponent<Button>().colors;
+        
+
+        bool activityOption = option.GetComponent<ActivityOption>().isAlive;
 
         if (((order == answer) & activityOption) | ((order != answer) & !activityOption) )
         {
             scores[3] = scores[3] + 1;
             score++;
             
+            SessionManager.Instance.setPlayerScore(scores);
 
-            //if (activityFinished)
-            //{
-                SessionManager.Instance.setPlayerScore(scores);
-                //SessionManager.Instance.setLevels(levels);
-                //AudioManager.Instance.PlaySound("Win");
-                StartCoroutine(Win());
-            //}
-
+            
+            oldCB.disabledColor = myColors[1];
+            StartCoroutine(Win());
+            
         }
         else
         {
-
-            AudioManager.Instance.PlayVoice(RndVoiceGenerator(LoliVoicesWrong));
-            errors++;
+            oldCB.disabledColor = myColors[2];
+            StartCoroutine(Wrong());
         }
 
+        option.GetComponent<Button>().colors = oldCB;
+        DisableAllButtons();
 
 
     }
@@ -408,6 +448,8 @@ public class ActivityController : MonoBehaviour {
 
     IEnumerator Win()
     {
+        //DisableAllButtons();
+
         AudioManager.Instance.PlayVoice(RndVoiceGenerator(LoliVoicesCorrect));
 
         yield return new WaitForSeconds(3);
@@ -422,6 +464,33 @@ public class ActivityController : MonoBehaviour {
             ResPawn();
         }
         
+    }
+
+    IEnumerator Wrong()
+    {
+        AudioManager.Instance.PlayVoice(RndVoiceGenerator(LoliVoicesWrong));
+        errors++;
+        yield return new WaitForSeconds(3);
+        EnableAllButtons();
+
+        ColorBlock oldCB;
+
+        foreach (Button button in options.GetComponentsInChildren<Button>())
+        {
+            button.GetComponent<ActivityOption>().selected = false;
+
+            oldCB = button.colors;
+            oldCB.normalColor = myColors[0];
+            oldCB.highlightedColor = myColors[0];
+            oldCB.disabledColor = myColors[0];
+            button.colors = oldCB;
+        }
+
+        if (activityName == "Activity3")
+        {
+            activity3Flag = 0;
+        }
+
     }
 
     public void EndLevel(string status)

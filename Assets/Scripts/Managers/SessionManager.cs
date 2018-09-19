@@ -6,8 +6,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class SessionManager : UnitySingleton<SessionManager> {
 
-    private string school = "ES001";
-    private string room = "R1";
+    //private string school = "ES001";
+    //private string room = "R1";
     
     //public string PlayerAvatarName { get; set; }
     //public string PlayerName { get; set; }
@@ -50,7 +50,7 @@ public class SessionManager : UnitySingleton<SessionManager> {
     public void SetPlayerInfo(string avatar, string nombre_jugador)
     {
         this.avatar = avatar;
-        this.nombre_jugador = school + "-" + room + "-" + nombre_jugador;
+        this.nombre_jugador = nombre_jugador;
 
         GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(this));
     }

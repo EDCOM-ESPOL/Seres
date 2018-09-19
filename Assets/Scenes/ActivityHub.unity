@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e367b6d568730664789268e6e093e387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioLoli: LoliEscogeNivel
 --- !u!4 &305551621
 Transform:
   m_ObjectHideFlags: 0
@@ -286,7 +287,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: b00363355fd8e214eade06f6c30c541d, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 9030bf42477092a44b21334315df50e1, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: daf272125768dc444be2c4ca2e904550, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -345,6 +346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Activity3
   isURL: 0
+  delayedWithAudio: 1
+  audioName: LoliTercerNivel
 --- !u!1 &383538426
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +623,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -683,8 +686,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8936584bcef054198d6871521ae7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Story
+  sceneName: EntornoNaturalHub
   isURL: 0
+  delayedWithAudio: 0
+  audioName: 
 --- !u!1 &975425880
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,115 +816,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 975425880}
---- !u!1 &1019783093
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1019783095}
-  - component: {fileID: 1019783094}
-  m_Layer: 0
-  m_Name: BGM
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1019783094
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1019783093}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e1f3d78d08d3cd247a0828725ef80878, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!4 &1019783095
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1019783093}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 242.75804, y: 143.61115, z: -6.739488}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1052737885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,7 +981,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: eb42654a581850249b41ede158790535, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 15688f10115ac4240b8b7be792e1301d, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 42c79a4543f10c24aa21bda41750aa64, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1144,6 +1040,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Activity4
   isURL: 0
+  delayedWithAudio: 1
+  audioName: LoliCuartoNivel
 --- !u!1 &1122067053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1181,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: e83853403b441d240a4208c227b38686, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: e8acb8369ce0300478b51a46d6e4a286, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: b339ff79e6b24b34e812455d79c831cc, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1342,6 +1240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Activity1
   isURL: 0
+  delayedWithAudio: 1
+  audioName: LoliPrimerNivel
 --- !u!1 &1254680505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1304,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1274056631
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4517922308107920, guid: 8f2a099c66366ff4682e76527ea95e7d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 227.59172
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517922308107920, guid: 8f2a099c66366ff4682e76527ea95e7d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 111.04519
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517922308107920, guid: 8f2a099c66366ff4682e76527ea95e7d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -5.9323397
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517922308107920, guid: 8f2a099c66366ff4682e76527ea95e7d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517922308107920, guid: 8f2a099c66366ff4682e76527ea95e7d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517922308107920, guid: 8f2a099c66366ff4682e76527ea95e7d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517922308107920, guid: 8f2a099c66366ff4682e76527ea95e7d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517922308107920, guid: 8f2a099c66366ff4682e76527ea95e7d, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8f2a099c66366ff4682e76527ea95e7d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1786160105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,7 +1411,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: d272c279cfebfd94b88f5cdb09255164, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: e3103829b04566d40901e02665c6574a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 1a8f0df5296e63547af95295d46943a2, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1528,6 +1470,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Activity2
   isURL: 0
+  delayedWithAudio: 1
+  audioName: LoliSegundoNivel
 --- !u!1 &1950992745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,7 +1819,6 @@ GameObject:
   - component: {fileID: 2043217366}
   - component: {fileID: 2043217365}
   - component: {fileID: 2043217364}
-  - component: {fileID: 2043217367}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1923,7 +1866,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1986,16 +1929,3 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043217362}
---- !u!114 &2043217367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2043217362}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a8936584bcef054198d6871521ae7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: 
-  isURL: 0

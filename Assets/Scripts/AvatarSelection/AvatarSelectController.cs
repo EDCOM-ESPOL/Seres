@@ -38,13 +38,13 @@ public class AvatarSelectController : UnitySingleton<AvatarSelectController> {
     {
         if (input.text == "")
         {
-            AudioManager.Instance.PlaySFX("Lose");
+            AudioManager.Instance.PlaySFX("LoliOuh");
         }
         else
         {
             AudioManager.Instance.PlaySFX("TinyButtonPush");
             SessionManager.Instance.SetPlayerInfo(selectedAvatar.sprite.name, input.text);
-            GameStateManager.Instance.LoadScene("Story");
+            GameStateManager.Instance.LoadScene("EntornoNaturalHub");
         }
         
     }

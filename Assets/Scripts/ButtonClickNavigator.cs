@@ -1,23 +1,18 @@
 ﻿using DigitalRuby.SoundManagerNamespace;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//public enum SFXOption
-//{
-//    Default = 0,
-//    Win = 1,
-//    Lose = 2
-//}
 
 public class ButtonClickNavigator : MonoBehaviour {
 
     public string sceneName;
     public bool isURL;
+    public bool delayedWithAudio;
+    public string audioName;
     Button thisButton;
-
-    //public SFXOption sfx;
 
     // Use this for initialization
     void Start () {
@@ -25,41 +20,60 @@ public class ButtonClickNavigator : MonoBehaviour {
         if (isURL)
         {
             thisButton.onClick.AddListener(delegate { loadAboutURL(); });
-        }else
+        }else if (delayedWithAudio)
+            {
+                thisButton.onClick.AddListener(delegate { LoadSceneDelayedWithAudio(); });
+            }
+            else thisButton.onClick.AddListener(delegate { loadScene(); });
+
+    }
+
+    private void PlayDefaultButtonSound()
+    {
+        AudioManager.Instance.PlaySFX("TinyButtonPush");
+    }
+
+    private void LoadSceneDelayedWithAudio()
+    {
+        PlayDefaultButtonSound();
+
+        Button[] buttons = FindObjectsOfType<Button>();
+        foreach (Button button in buttons)
         {
-            thisButton.onClick.AddListener(delegate { loadScene(); });
+            //print(button);
+            button.interactable = false;
         }
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+        //thisButton.interactable = false;
+        StartCoroutine(AudioDelay());
+    }
+
 
     void loadScene()
     {
-        AudioManager.Instance.PlaySFX("TinyButtonPush");
+        PlayDefaultButtonSound();
 
-        if (GameStateManager.Instance.getCurrentSceneName() == "MainScreen")
-        {
-            thisButton.interactable = false;
-            StartCoroutine(PlayLoliStartAudio());
-        }else GameStateManager.Instance.LoadScene(sceneName);
+        //if (GameStateManager.Instance.getCurrentSceneName() == "MainScreen")
+        //{
+        //    thisButton.interactable = false;
+        //    StartCoroutine(PlayLoliStartAudio());
+        //}else
+
+        GameStateManager.Instance.LoadScene(sceneName);
 
 
     }
 
-    IEnumerator PlayLoliStartAudio()
+    IEnumerator AudioDelay()
     {
-        AudioManager.Instance.PlayVoice("LoliEmpecemos");
-        yield return new WaitForSeconds(2);
+        AudioManager.Instance.PlayVoice(audioName);
+        yield return new WaitForSeconds(1.6f);
         GameStateManager.Instance.LoadScene(sceneName);
     }
 
     void loadAboutURL()
     {
-        AudioManager.Instance.PlaySFX("TinyButtonPush");
+        PlayDefaultButtonSound();
         Application.OpenURL("http://midiapi.espol.edu.ec");
     }
 

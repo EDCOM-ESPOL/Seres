@@ -2,14 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryController : VideoController {
 
-    
+    public Button replayButton;
+    public Button skipButton;
 
     public StoryMetaData storyData;
-
-    //bool isPaused = false;
 
     // Use this for initialization
     void Start () {
@@ -23,15 +23,19 @@ public class StoryController : VideoController {
         {
             if (player.time >= 197.0f)
             {
+                replayButton.interactable = false;
+                skipButton.interactable = false;
                 storyData.estado = "completado";
                 panel.SetActive(true);
                 if (player.time >= 207.0f)
                 {
-                    SendJSONAndGoToScene("ActivityHub");
+                    SendJSONAndGoToScene("EntornoNaturalHub");
                 }
             }
             else
             {
+                replayButton.interactable = true;
+                skipButton.interactable = true;
                 if (Input.GetMouseButtonUp(0))
                 {
                     if (panel.activeSelf == false)
@@ -73,7 +77,7 @@ public class StoryController : VideoController {
 
     public void Avanza()
     {
-        player.time = 195.0f;
+        player.time = player.time + 15.0f;
     }
 
     public void SendJSONAndGoToScene(string sceneName)

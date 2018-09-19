@@ -514,7 +514,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -579,6 +579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Intro
   isURL: 0
+  delayedWithAudio: 0
+  audioName: 
 --- !u!1 &274110626
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +873,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -300, y: -164.00002}
-  m_SizeDelta: {x: 578.8, y: 105.1}
+  m_SizeDelta: {x: 669.4, y: 105.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395531078
 MonoBehaviour:
@@ -911,14 +913,14 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 395531079}
   m_TextComponent: {fileID: 770389970}
   m_Placeholder: {fileID: 1460384285}
-  m_ContentType: 5
+  m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 6
+  m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 4
-  m_CharacterLimit: 16
+  m_CharacterValidation: 0
+  m_CharacterLimit: 24
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []

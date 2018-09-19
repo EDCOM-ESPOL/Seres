@@ -4,12 +4,13 @@ using UnityEngine.UI;
 
 public class ActivityHubManager : MonoBehaviour {
 
+    public string AudioLoli;
     //private Button[] activityButtons;
 
 
     // Use this for initialization
     void Start () {
-        AudioManager.Instance.PlayVoice("LoliEscogeNivel");
+        AudioManager.Instance.PlayVoice(AudioLoli);
         //AudioManager.Instance.PlayMusic("BGM");
         //activityButtons = GameObject.Find("ActivityButtonContainer").GetComponentsInChildren<Button>();
         //updateInterface(SessionManager.Instance.getLevels());
