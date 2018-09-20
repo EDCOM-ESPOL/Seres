@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Character.unity
     guid: 40e6502409d4f5a41ae5a658bab91813
   - enabled: 1
-    path: Assets/Scenes/EntornoNatural.unity
+    path: Assets/Scenes/EntornoNaturalHub.unity
     guid: 2df59e96a4d41c14595416c3728df7a5
   - enabled: 1
     path: Assets/Scenes/Story.unity

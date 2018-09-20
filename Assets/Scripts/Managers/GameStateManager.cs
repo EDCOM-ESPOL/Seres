@@ -127,10 +127,12 @@ public class GameStateManager : UnitySingleton<GameStateManager>
     {
         //List<string> jsonList = ReadLocalFile();
         //Debug.Log("New JSON: " + json);
+        PrintJsonList();
+        yield return CheckServer();
 
         if (CheckNet() && IsConnectedToServer)
         {
-            PrintJsonList();
+            
             Debug.Log("READY TO UPLOAD");
             List<string> sendedJsonItems = new List<string>();
 

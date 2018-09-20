@@ -38,7 +38,7 @@ public class AvatarSelectController : UnitySingleton<AvatarSelectController> {
     {
         if (input.text == "")
         {
-            AudioManager.Instance.PlaySFX("LoliOuh");
+            AudioManager.Instance.PlayVoice("LoliOuh");
         }
         else
         {

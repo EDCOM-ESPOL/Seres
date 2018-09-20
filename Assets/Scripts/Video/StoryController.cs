@@ -11,6 +11,8 @@ public class StoryController : VideoController {
 
     public StoryMetaData storyData;
 
+    private int skipsCount = 0;
+
     // Use this for initialization
     void Start () {
         storyData = new StoryMetaData(SessionManager.Instance.nombre_jugador, System.Math.Round(player.clip.length).ToString());
@@ -25,7 +27,10 @@ public class StoryController : VideoController {
             {
                 replayButton.interactable = false;
                 skipButton.interactable = false;
-                storyData.estado = "completado";
+                if (skipsCount == 0)
+                {
+                    storyData.estado = "completado";
+                }else storyData.estado = "abandonado";
                 panel.SetActive(true);
                 if (player.time >= 207.0f)
                 {
@@ -78,12 +83,13 @@ public class StoryController : VideoController {
     public void Avanza()
     {
         player.time = player.time + 15.0f;
+        skipsCount++;
     }
 
     public void SendJSONAndGoToScene(string sceneName)
     {
         storyData.fecha_fin = System.DateTime.Now.ToString("yyyy/MM/dd");
-        storyData.tiempo_juego = System.Math.Round(player.time).ToString();
+        storyData.tiempo_juego = System.Math.Round(Time.timeSinceLevelLoad).ToString();
         GameStateManager.Instance.AddJsonToList(JsonUtility.ToJson(storyData));
         AudioManager.Instance.PlaySFX("TinyButtonPush");
         base.StopAndGoToScene(sceneName);
