@@ -25,7 +25,7 @@ public abstract class GameMetaData {
     {
         this.id_registro = id_registro;
 
-        nombre_juego = "En mi Entorno Natural";
+        nombre_juego = SessionManager.Instance.nombre_juego;
         descripcion_juego = "bla bla";
         nombre_capitulo = "Los Seres";
         descripcion_capitulo = "bla bla";

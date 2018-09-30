@@ -16,6 +16,7 @@ public class SessionManager : UnitySingleton<SessionManager> {
     public string tipo = "jugador";
     public string avatar;
     public string nombre_jugador;
+    public string nombre_juego = "En mi Entorno Natural";
 
 
     private int[] playerScore = { 0, 0, 0, 0 };
