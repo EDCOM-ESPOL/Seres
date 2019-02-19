@@ -1,4 +1,5 @@
 ﻿using DigitalRuby.SoundManagerNamespace;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,9 @@ public class GameStateManager : UnitySingleton<GameStateManager>
     private List<string> jsonList = new List<string>();
     private bool IsConnectedToServer = false;
 
+    private string settingsFileName = "/globalSettings.dat";
+    private GlobalSettings globalSettings;
+
 
 
     // Use this for initialization
@@ -27,6 +31,7 @@ public class GameStateManager : UnitySingleton<GameStateManager>
         print(Application.persistentDataPath);
         ReadLocalFile();
         StartCoroutine(SyncJsonData());
+        LoadSettings();
     }
 
     // Update is called once per frame
@@ -37,6 +42,16 @@ public class GameStateManager : UnitySingleton<GameStateManager>
         //    GoBack();
         //}
     }
+
+    // internal object GetGlobalSettings()
+    // {
+    //     throw new NotImplementedException();
+    // }
+      public GlobalSettings GetGlobalSettings()
+    {
+        return globalSettings;
+    }
+
 
     public void LoadScene(string sceneName)
     {
@@ -310,6 +325,59 @@ public class GameStateManager : UnitySingleton<GameStateManager>
             Debug.Log("DELETING - SAVE DATA NOT FOUND");
         }
 
+    }
+
+    private void LoadSettings()
+    {
+        if (File.Exists(Application.persistentDataPath + settingsFileName))
+        {
+            try
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream file = File.Open(Application.persistentDataPath + settingsFileName, FileMode.Open);
+                GlobalSettings data = (GlobalSettings)bf.Deserialize(file);
+                file.Close();
+
+                this.globalSettings = new GlobalSettings(data.school, data.room);
+            }
+            catch (Exception)
+            {
+                Debug.Log("Configuraciones: ERROR al leer el archivo");
+                SaveGlobalSettings(new GlobalSettings());
+                throw;
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("Configuraciones: No existe archivo");
+            Debug.Log("Configuraciones: Creando Archivo");
+            SaveGlobalSettings(new GlobalSettings());
+
+        }
+    }
+
+
+    public void SaveGlobalSettings(GlobalSettings settings)
+    {
+        this.globalSettings = settings;
+
+        try
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Create(Application.persistentDataPath + settingsFileName);
+
+            bf.Serialize(file, settings);
+            file.Close();
+            Debug.Log("Configuraciones: Guardado con éxito");
+        }
+        catch (Exception)
+        {
+            Debug.Log("Configuraciones: ERROR al guardar el archivo");
+            throw;
+        }
+        
     }
 }
 
