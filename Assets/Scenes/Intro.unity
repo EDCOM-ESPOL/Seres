@@ -622,6 +622,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Character
   isURL: 0
+  delayedWithAudio: 0
+  audioName: 
 --- !u!1 &822912177
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +795,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: MainScreen
   isURL: 0
+  delayedWithAudio: 0
+  audioName: 
 --- !u!114 &853095920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,7 +1252,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1763942669}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 9c1b7fbab41e3da48b7bff60f5c27f62, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 8af1c39a630c8414692f55801a16d784, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1315770177}
